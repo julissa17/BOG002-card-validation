@@ -1,3 +1,7 @@
 import validator from './validator.js';
+import {header} from './componentes/header.js';
+import {footer} from './componentes/footer.js';
 
-console.log(validator);
+let body = document.querySelector("body")
+body.appendChild(header())
+body.appendChild(footer())

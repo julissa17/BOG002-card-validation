@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="shortcut icon" href="./assets/huella.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" />
-    <!--  me permite usar iconos -->
-  </head>
-
-  <body>
-      <header class="header">
-
-        <div class="header__left">
+const header = ()=>{
+    const view = `
+    <div class="header__left">
           <div class="header__icon-menu icon"></div>
           <h2 class="header__logo">Logo</h2>
         </div>
@@ -67,49 +55,15 @@
 
           <div class="header__icon-canasta icon"></div>
           </div>
+    `
 
-      </header> 
+    const cHeader = document.createElement("header")
+    cHeader.classList.add("header")
+    cHeader.innerHTML = view
+    
+    return cHeader
+}
 
-
-      <div class="c-buscador">
-        <div class="buscador__text">Buscar</div>
-        <div class="buscador__icon-lupa"></div>
-      </div>
-
-      <div class="carrousel">
-        <div class="carrousel__title">Nuestras Categorías</div>
-        <div class="carrousel__products">
-          <div class="categoria">
-            <img class="categoria__img" src="" alt="">
-            <div class="categoria__title">Alimentos</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-Product">
-        <img class="c-Product__img" src="./assets/monello.jpg" alt="">
-        <div class="c-Product__name">Alimento para perro Monello x 1.5 Kg</div>
-        <div class="c-Product__button c-button">PAGAR</div>
-      </div>
-
-      <footer class="footer">
-        <div class="footer__icons">
-          <div class="footer__icon-whatsapp icon"></div>
-          <div class="footer__icon-instagram icon"></div>
-          <div class="footer__icon-facebook icon"></div>
-        </div>
-
-        <div class="footer__text">
-          <p>Términos y condiciones</p>
-          <p>Política de tramientos de datos</p>
-        </div>
-      </footer>
-      
-     
-    <!-- <script src="index.js" type="module"></script> -->
-  </body>
-
-</html>
-
+export {header}
 
 
