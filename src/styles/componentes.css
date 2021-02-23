@@ -77,3 +77,51 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
+.c-carrousel{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #E5E5E5;
+}
+.c-carrousel__title{
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+.c-carrousel__products{
+    display: flex;
+    overflow-x: scroll;
+    padding: 15px 0;
+}
+.c-carrousel__products::-webkit-scrollbar{
+    height: 5px;
+}
+.c-carrousel__products::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+
+.c-categoria{
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: #2D9CDB;
+}
+.c-categoria__img{
+    width:116px;
+    height: 140px;
+    object-fit: fill;
+}
+.c-categoria__title{
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+

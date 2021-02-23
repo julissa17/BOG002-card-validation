@@ -5,3 +5,4 @@ import {footer} from './componentes/footer.js';
 let body = document.querySelector("body")
 body.appendChild(header())
 body.appendChild(footer())
+
