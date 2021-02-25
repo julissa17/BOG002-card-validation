@@ -6,7 +6,7 @@ const search = ()=> {
 
     const cSearch = document.createElement("div")
     cSearch.classList.add('c-buscador')
-    cSearch.innerHTML = view
+    cSearch.insertAdjacentHTML("afterbegin", view)
     
 
     return (cSearch)

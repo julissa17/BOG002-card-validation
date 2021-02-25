@@ -25,6 +25,7 @@ html{
     height: 71px;
     padding: 0 15px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--orange-main);
@@ -76,7 +77,6 @@ html{
     padding: 30px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column; 
 }
 
@@ -99,11 +99,12 @@ html{
 .footer__text{
     margin-top: 20px;
     color: white;
+}
+.footer__text > p{
     font-weight: 400;
+    font-style: italic;
     font-size: 1.4rem;
     text-align: center;
-}
-.footer__text >p{
     padding-top: 5px;
 }
 
