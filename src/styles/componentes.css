@@ -42,17 +42,17 @@
     background: var(--orange-second);
 }
 
-.c-buscador > .buscador__text{
-    color: white;
-    font-weight: bold;
-    font-size: 1.6rem;
-}
+    .c-buscador > .buscador__text{
+        color: white;
+        font-weight: bold;
+        font-size: 1.6rem;
+    }
 
-.c-buscador > .buscador__icon-lupa{
-    width: 16px;
-    height: 16px;
-    background: url("../assets/icon-lupa.svg")center/contain no-repeat;
-}
+    .c-buscador > .buscador__icon-lupa{
+        width: 16px;
+        height: 16px;
+        background: url("../assets/icon-lupa.svg")center/contain no-repeat;
+    }
 
 
 .c-Product{
@@ -64,26 +64,26 @@
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
-.c-Product__img{
-    width: 75%;
-    height: 195px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-.c-Product__name{
-    width: 80%;
-    font-weight: 400;
-    font-size: 1.4rem;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.c-Product__price{
-    font-weight: 500;
-    font-size: 2rem;
-    text-align: center;
-    color: var(--orange-main);
-    margin-bottom: 10px;
-}
+    .c-Product__img{
+        width: 75%;
+        height: 195px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    .c-Product__name{
+        width: 80%;
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .c-Product__price{
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+        color: var(--orange-main);
+        margin-bottom: 10px;
+    }
 
 .c-carrousel{
     display: flex;
@@ -91,23 +91,23 @@
     padding: 15px;
     border: 1px solid #E5E5E5;
 }
-.c-carrousel__title{
-    font-weight: 500;
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-}
-.c-carrousel__items{
-    display: flex;
-    overflow-x: scroll;
-    padding: 15px 0;
-}
-.c-carrousel__products::-webkit-scrollbar{
-    height: 5px;
-}
-.c-carrousel__products::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
+    .c-carrousel__title{
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    .c-carrousel__items{
+        display: flex;
+        overflow-x: scroll;
+        padding: 15px 0;
+    }
+    .c-carrousel__products::-webkit-scrollbar{
+        height: 5px;
+    }
+    .c-carrousel__products::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
 
 
 .c-categoria{
@@ -119,46 +119,109 @@
     margin-right: 20px;
     cursor: pointer;
 }
-.c-categoria__img{
-    width:116px;
-    height: 140px;
-    object-fit: fill;
-}
-.c-categoria__title{
-    margin-top: 10px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-align: center;
-}
+    .c-categoria__img{
+        width:116px;
+        height: 140px;
+        object-fit: fill;
+    }
+    .c-categoria__title{
+        margin-top: 10px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+    }
 
-section{
-   
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+
+
+
+/* COMPONENTE FORMULARIO */
 .formulario{
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5%;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
 }
 
-.entrega {
-    background-color: beige;
-    padding: 5%;
-    border-radius: 4px;
+.formulario__title{
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
+
+.formulario__datos{
+    margin-top: 10px;
+    width: 100%;
+}
+
+    .formulario__input{
+        display: flex;
+        flex-direction: column;
+    }
+
+        .formulario__input > label{
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+
+        .formulario__input > input{
+            outline: none;
+            margin-top: 5px;
+            border: none;
+            border-bottom: solid black 1px;
+            padding: 4px;
+            width: 100%;
+            font-size: 1.4rem;
+        }
+
+h2{
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+.metodoEntrega {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(238, 238, 217);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.formulario__checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.formulario__checkbox > label{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+
+
 .medio_pago{
     background-color: beige;
     padding: 5px;
     border-radius: 4px;
 }
   
- 
+/* width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0.5%; */

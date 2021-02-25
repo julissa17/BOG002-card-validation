@@ -67,35 +67,85 @@
           <div class="header__icon-canasta icon"></div>
         </div> 
     </header>
-    <section class="forms">
-    <div id="formulario_contacto" class="formulario" >
-        <h1>Información de contacto</h1>
-            <form>
-                <label for="name">Nombre(s) y apellido(s):</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="identification">N° de identificación:</label><br>
-                <input type="number" id="identification" name="identification"><br>
-                <label for="mail">Correo electrónico</label><br>
-                <input type="email" id="mail" name="mail"><br>
-                <label for="entrega">Forma de entrega</label><br>
-                <div class="entrega">
-                    <input type="checkbox">Entrega a domicilio
-                    <input type="checkbox">Recoger en tienda
+
+    <main class="forms">
+        
+    </main>
+    
+    <section id="formulario_contacto" class="formulario" >
+        <h1 class="formulario__title">Información de contacto</h1>
+        
+        <form class="formulario__datos">
+
+            <div class="formulario__input">
+                <label for="name">Nombre(s) y apellido(s):</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="formulario__input">
+                <label for="identification">N° de identificación:</label>
+                <input type="number" id="identification" name="identification">
+            </div>
+
+            <div class="formulario__input">
+                <label for="mail">Correo electrónico</label>
+                <input type="email" id="mail" name="mail">
+            </div>   
+               
+        </form>
+    </section>
+
+    <section id="formulario_envio" class="formulario" >
+        
+        <h1 class="formulario__title">Información de envíos</h1>       
+        
+        <div class="formulario__metodoEnvio">
+
+            <h2>Forma de entrega</h2>
+
+            <div class="metodoEntrega">
+
+                <div class="formulario__checkbox">
+                    <label for="domicilio">Entrega a domicilio</label>
+                    <input type="checkbox" id="domicilio">
                 </div>
 
-            </form>
-    </div>
-    <div id="formulario_envio" class="formulario">
-        <h1>Información de envío</h1>
-            <form>
-              <label for="address">Dirección:</label><br>
-              <input type="text" id="address" name="address"><br>
-              <label for="city">Ciudad/Municipio:</label><br>
-              <input type="text" id="city" name="city"><br>
-              <label for="state">Departamento</label><br>
-              <input type="text" id="state" name="state">
-            </form>
-    </div>
+                <div class="formulario__checkbox">
+                    <label for="tienda">Recoger en tienda</label>
+                    <input type="checkbox" id="tienda">
+                </div>
+                
+                
+            </div>
+        </div>
+            
+
+        <form class="formulario__datos">
+            
+            <div class="formulario__input">
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" >
+            </div>
+            <div class="formulario__input">
+                <label for="city">Ciudad/municipio:</label>
+                <input type="text" id="city" >
+            </div>
+            <div class="formulario__input">
+                <label for="state">Departamento</label>
+                <input type="text" id="state" >
+            </div>   
+               
+        </form>
+    </section>
+
+
+
+
+<!-- 
+    
+
+
+   
     <div id="formulario_medio_pago" class="formulario">
         <h1>Método de pago</h1>
         <form class="medio_pago">
@@ -121,7 +171,9 @@
         </form>
         <div class="c-Product__button c-button" style="margin: 4px;">PAGAR</div>
     </div>
-    </section>
+     -->
+
+
 </body>
 </html>
 
