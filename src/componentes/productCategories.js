@@ -19,9 +19,7 @@ const productCategories = ()=>{
         <img class="c-categoria__img" src="${categoria.img}" alt="">
         <div class="c-categoria__title">${categoria.name}</div>
         `
-        cCategy.innerHTML = viewCategory
-
-        console.log(categoria.img);
+        cCategy.insertAdjacentHTML("afterbegin", viewCategory) 
 
         categoriesCarrousel.appendChild(cCategy)
    
