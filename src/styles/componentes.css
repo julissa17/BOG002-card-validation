@@ -96,7 +96,7 @@
     font-size: 1.8rem;
     margin-bottom: 5px;
 }
-.c-carrousel__products{
+.c-carrousel__items{
     display: flex;
     overflow-x: scroll;
     padding: 15px 0;
@@ -118,7 +118,6 @@
     border-radius: 4px;
     margin-right: 20px;
     cursor: pointer;
-    background: #2D9CDB;
 }
 .c-categoria__img{
     width:116px;
