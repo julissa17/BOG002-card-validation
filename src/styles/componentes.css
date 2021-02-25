@@ -77,6 +77,13 @@
     text-align: center;
     margin-bottom: 10px;
 }
+.c-Product__price{
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--orange-main);
+    margin-bottom: 10px;
+}
 
 .c-carrousel{
     display: flex;
