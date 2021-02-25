@@ -55,11 +55,11 @@ html{
             background: url(./assets/header__carrito.svg)center/contain no-repeat;
         }
 
+
 .productos{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 15px;
 }
 .productos__title{
@@ -67,6 +67,17 @@ html{
     font-size: 1.8rem ;
     margin-bottom: 20px;
 }
+.productos__container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+    .productos__container > div {
+        margin-bottom: 20px;
+    }
+
+
+
 
 .metodoEntrega {
     display: flex;
@@ -93,8 +104,6 @@ html{
     .formulario__checkbox input {
         margin-left: 10px;
     }
-
-
 
 
 
@@ -142,5 +151,14 @@ html{
 
     .footer__text{
         margin-top: 0;
+    }
+}
+
+@media (min-width:425px){
+    .productos__container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
     }
 }
