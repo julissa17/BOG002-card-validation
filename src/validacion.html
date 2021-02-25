@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
+   
     <title>Página validación</title>
 </head>
 <body>
@@ -66,7 +67,8 @@
           <div class="header__icon-canasta icon"></div>
         </div> 
     </header>
-    <div class="formulario_contacto">
+    <section class="forms">
+    <div id="formulario_contacto" class="formulario" >
         <h1>Información de contacto</h1>
             <form>
                 <label for="name">Nombre(s) y apellido(s):</label><br>
@@ -83,7 +85,7 @@
 
             </form>
     </div>
-    <div class="formulario_envio">
+    <div id="formulario_envio" class="formulario">
         <h1>Información de envío</h1>
             <form>
               <label for="address">Dirección:</label><br>
@@ -94,27 +96,32 @@
               <input type="text" id="state" name="state">
             </form>
     </div>
-    <div class="formulario_medio_pago">
+    <div id="formulario_medio_pago" class="formulario">
         <h1>Método de pago</h1>
-        <form id="medio_pago">
+        <form class="medio_pago">
             <input type="radio">Tarjeta débito <br>
             <input type="radio">Tarjeta crédito <br>
             <input type="radio">Otros medios
         </form>
     </div>
-    <div class="formulario_validacion">
+    <div id="formulario_validacion" class="formulario">
         <h1>Validación tarjeta</h1>
         <form>
             <label for="name">Nombre titular:</label><br>
             <input type="text" id="name" name="name"><br>
             <label >N° de tarjeta</label><br>
-            <input type="number" id="creditcard" maxlength="16"/><br>
+            <input type="number" id="card" maxlength="16"/><br>
             <label for="date">Fecha de expiración</label><br>
-            <input type="datetime" id="año" maxlength="4" placeholder="aaaa">
-            <input type="datetime" id="mes" maxlength="2" placeholder="mm">
-            <input type="number" id="CVV" maxlength="3" placeholder="CVV">
+            <div style=" display: flex; flex-direction: column;justify-content: center; ;">
+            <input type="datetime" id="año" maxlength="4" placeholder="aaaa" >
+            <input type="datetime" id="mes" maxlength="2" placeholder="mm" >
+            <input type="number" id="CVV" maxlength="3" placeholder="CVV" >
+            </div>
+            
         </form>
+        <div class="c-Product__button c-button" style="margin: 4px;">PAGAR</div>
     </div>
-         
+    </section>
 </body>
 </html>
+
