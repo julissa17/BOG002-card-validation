@@ -10,7 +10,7 @@ const featuredProducts = ()=>{
     cfeaturedProducts.insertAdjacentHTML("afterbegin",view)
 
     const productItems = cfeaturedProducts.querySelector(".c-carrousel__items")
-    console.log(productItems);
+
 
     dataFeaturedProducts.forEach(product =>{
         let cProduct = document.createElement("div")

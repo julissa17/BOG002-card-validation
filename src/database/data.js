@@ -7,7 +7,11 @@ let dataCategories = [
     {
         name: 'Alimentos',
         img: "./assets/monello.jpg",
-        productList : ["hola", "chao", "piri", "popo"]
+        productList : [
+           
+
+
+        ]
     },
     {
         name: 'Snacks',
@@ -43,4 +47,15 @@ let dataFeaturedProducts = [
 
 
 export {dataCategories, dataFeaturedProducts}
+
+//TODO crear el objeto de producto
+//TODO crear la funcion que crea los objetos
+
+class Categoria{
+    constructor (nombre, img, listadoProductos){
+        this.name = nombre,
+        this.imgUrl = img,
+        this.productList = listadoProductos
+    }
+}
 
