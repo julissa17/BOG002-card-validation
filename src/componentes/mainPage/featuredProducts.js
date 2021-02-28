@@ -1,4 +1,4 @@
-import {dataFeaturedProducts} from "../database/data.js"
+import {dataFeaturedProducts} from "../../database/data.js"
 
 const featuredProducts = ()=>{
     const view = `

@@ -3,59 +3,141 @@
         //productos == objeto, nombre, img, precio, units, stock
 // productos destacados, son una lista de objetos
 
-//creo objeto categoria
-class Categoria {
-    constructor (nombre, img, listadoProductos){
-        this.name = nombre;
-        this.imgUrl = img;
-        this.listProducts = listadoProductos
+//TODO crear el objeto de producto
+//TODO crear la funcion que crea los objetos
+
+class Product {
+    constructor (nombre, img, precio, stock, numeroVentas){
+        this.name = nombre,
+        this.imgUrl = img,
+        this.price =precio,
+        this.stock = stock,
+        this.numberSale = numeroVentas || 0
     }
 }
+
+//creo objeto categoria
+class Categoria {
+    constructor (nombre, img){
+        this.name = nombre;
+        this.imgUrl = img;
+        this.listProducts = []
+    }
+
+}
+
 //creo objeto categorias 
-class Categorias{
+class Store{
     constructor() {
-        this.listCategories = []
+        this.categories = []
     }
 
-    addCategory(name, imgUrl, products){
-        const category = new Categoria(name, imgUrl, products)
-        this.listCategories.push(category)
+    addCategory(name, imgUrl){
+        const category = new Categoria(name, imgUrl)
+        this.categories.push(category)
     }
 
+    addProduct (name,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct){
+        const product = new Product(nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct)
+
+        this.categories.forEach(element=>{
+            if (element.name == name){
+                element.listProducts.push(product)
+            }
+        })
+    }
+   
     //remove
+
     //find
 
 }
 
-//creo la categoria de productos
-const dataCategories = new Categorias();
-dataCategories.addCategory('Alimentos', './assets/Categorias/categoria__img-purina.png', ["hello", "popo","enojada"])
-dataCategories.addCategory('Aseo', './assets/Categorias/categoria__img-aseo.png',["hello", "popo","enojada"])
-dataCategories.addCategory('Juguetes','./assets/Categorias/categoria__img-juguetes.jpg', ["hello", "popo","enojada"])
-dataCategories.addCategory('Medicamentos','./assets/Categorias/categoria__img-medicamentos.jpg',["hello", "popo","enojada"])
-dataCategories.addCategory('Snacks','./assets/Categorias/categoria__img-snacks.jpg', ["hello", "popo","enojada"])
-dataCategories.addCategory('Accesorios', './assets/Categorias/categoria__img-accesorios.jpg', ["hello", "popo","enojada"])
-dataCategories.addCategory('Ropa', './assets/Categorias/categoria__img-ropa.jpg', ["hello", "popo","enojada"])
-dataCategories.addCategory('Muebles', './assets/Categorias/categoria__img-muebles.jfif', ["hello", "popo","enojada"])
-dataCategories.addCategory('Muebles', './assets/Categorias/categoria__img-muebles.jfif', ["hello", "popo","enojada"])
-
-//creo la categoria de productos destacados
-const dataFeaturedProducts = new Categorias();
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
-dataFeaturedProducts.addCategory('Mordedor','./assets/monello.jpg')
 
 
-export {dataCategories, dataFeaturedProducts}
+const kanu = new Store()
+//agrego una categoria que a su vez le agrego los productos
+kanu.addCategory("alimento", "./assets/monello.jpg")
+kanu.addProduct("alimento","Alimento para perro Monello x 1.5 Kg","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct("alimento","Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct("alimento","Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct("alimento","Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct("alimento","Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct("alimento","Monello","./assets/monello.jpg", 3500, 10,0 )
 
-//TODO crear el objeto de producto
-//TODO crear la funcion que crea los objetos
+
+kanu.addCategory('aseo', './assets/Categorias/categoria__img-aseo.png')
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('juguetes','./assets/Categorias/categoria__img-juguetes.jpg')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('medicamentos','./assets/Categorias/categoria__img-medicamentos.jpg');
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('snacks','./assets/Categorias/categoria__img-snacks.jpg')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('accesorios', './assets/Categorias/categoria__img-accesorios.jpg')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('muebles', './assets/Categorias/categoria__img-muebles.jfif')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('muebles', './assets/Categorias/categoria__img-muebles.jfif')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+kanu.addCategory('juguetes','./assets/Categorias/categoria__img-juguetes.jpg')
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+// kanu.addProduct('aseo',"Monello","./assets/monello.jpg", 3500, 10,0 )
+
+
+export {kanu}
+
 
 
 
