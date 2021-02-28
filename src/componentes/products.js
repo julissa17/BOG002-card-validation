@@ -1,4 +1,7 @@
+import{dataCategories} from "../database/data.js"
+
 const productos = ()=>{
+
     const view =`
     <div class="productos__title">Nuestros productos</div>
     <div class="productos__container"></div>`
@@ -7,10 +10,20 @@ const productos = ()=>{
     cProductos.classList.add("productos")
     cProductos.insertAdjacentHTML("afterbegin",view)
 
-    
-return cProductos
+    let category = document.querySelectorAll(".c-categoria")
+
+  
+    return cProductos
 }
 
+
+
+
+
+
+//por defecto alguna categoria debe quedar seleccionada
+//una vez se clickee una categoria el debe saber a quien pertenece
+// desplegar los productos te acuerdo a la categoria a la que pertenezca
 
 
 export{productos}

@@ -101,13 +101,13 @@
         overflow-x: scroll;
         padding: 15px 0;
     }
-    .c-carrousel__products::-webkit-scrollbar{
-        height: 5px;
-    }
-    .c-carrousel__products::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 4px;
-    }
+        .c-carrousel__items::-webkit-scrollbar{
+            height: 5px;
+        }
+        .c-carrousel__items::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
 
 
 .c-categoria{
@@ -144,36 +144,36 @@
     margin: 0 auto;
 }
 
-.formulario__title{
-    font-weight: 600;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.formulario__datos{
-    margin-top: 10px;
-    width: 100%;
-}
-
-    .formulario__input{
-        display: flex;
-        flex-direction: column;
+    .formulario__title{
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
-        .formulario__input > label{
-            font-size: 1.4rem;
-            font-weight: 400;
+    .formulario__datos{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+        .formulario__input{
+            display: flex;
+            flex-direction: column;
         }
 
-        .formulario__input > input{
-            outline: none;
-            margin-top: 5px;
-            border: none;
-            border-bottom: solid black 1px;
-            padding: 4px;
-            width: 100%;
-            font-size: 1.4rem;
-        }
+            .formulario__input > label{
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+
+            .formulario__input > input{
+                outline: none;
+                margin-top: 5px;
+                border: none;
+                border-bottom: solid black 1px;
+                padding: 4px;
+                width: 100%;
+                font-size: 1.4rem;
+            }
 
 h2{
     font-weight: 500;

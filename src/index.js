@@ -18,7 +18,7 @@ body.appendChild(footer())
 let numberCard = "4137894711755904";
 let lenghtNumberCard = numberCard.length
 let reverseNumberCard = numberCard.split('').reverse().join('');
-console.log(numberCard);
+
 for (let posicion; posicion<lenghtNumberCard; posicion +=1){
     console.log(posicion);
 }

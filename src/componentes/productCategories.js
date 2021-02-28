@@ -1,6 +1,7 @@
 import {dataCategories} from "../database/data.js";
 
 const productCategories = ()=>{
+
     const view = `
     <div class="c-carrousel__title">Nuestras Categorías</div>
     <div class="c-carrousel__items"></div>`
@@ -11,19 +12,24 @@ const productCategories = ()=>{
 
     const categoriesCarrousel = categories.querySelector(".c-carrousel__items")
     
-    dataCategories.forEach(categoria => {
-        let cCategy = document.createElement("div")
-        cCategy.classList.add("c-categoria")
-       
-        const viewCategory = `
-        <img class="c-categoria__img" src="${categoria.img}" alt="">
-        <div class="c-categoria__title">${categoria.name}</div>
-        `
-        cCategy.insertAdjacentHTML("afterbegin", viewCategory) 
+    dataCategories.listCategories.forEach(categoria=>{
+      let cCategory = document.createElement("div")
+        cCategory.classList.add("c-categoria")
 
-        categoriesCarrousel.appendChild(cCategy)
-   
-    });
+       
+        const viewCategory = `<img class="c-categoria__img" src="${categoria.imgUrl}" alt="">
+                              <div class="c-categoria__title">${categoria.name}</div>`
+
+        cCategory.insertAdjacentHTML("afterbegin", viewCategory) 
+
+
+        categoriesCarrousel.appendChild(cCategory)
+
+
+        //evento crear los productos correspondientes --- component o funcion???
+        
+    })
+
 
     return categories
 }
@@ -31,6 +37,30 @@ const productCategories = ()=>{
 
 export {productCategories}
 
+
+function renderProducts(categoria){
+
+  categoria.forEach(producto=>{
+    //crear un componente producto e insertarlo ??? donde
+
+
+  })
+}
+
+
+
+const product = (producto)=>{
+  const div = createImageBitmap
+
+  //añadir funcionalidades....
+
+
+  
+}
+
+//voy a borrar todos los productos para volver a renderizarlos?? 
+
+//
 
 {/* <section class="c-carrousel">
         <div class="c-carrousel__title">Nuestras Categorías</div>

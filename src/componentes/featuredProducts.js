@@ -12,12 +12,12 @@ const featuredProducts = ()=>{
     const productItems = cfeaturedProducts.querySelector(".c-carrousel__items")
 
 
-    dataFeaturedProducts.forEach(product =>{
+    dataFeaturedProducts.listCategories.forEach(product =>{
         let cProduct = document.createElement("div")
         cProduct.classList.add("c-categoria")
 
         const viewCProduct = ` 
-            <img class="c-categoria__img" src="${product.img}" alt="">
+            <img class="c-categoria__img" src="${product.imgUrl}" alt="">
             <div class="c-categoria__title">${product.name}</div>
         `
         cProduct.insertAdjacentHTML("afterbegin",viewCProduct)
