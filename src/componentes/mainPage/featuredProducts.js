@@ -1,4 +1,4 @@
-import {dataFeaturedProducts} from "../../database/data.js"
+import {bestProducts} from "../../database/data.js"
 
 const featuredProducts = ()=>{
     const view = `
@@ -11,19 +11,26 @@ const featuredProducts = ()=>{
 
     const productItems = cfeaturedProducts.querySelector(".c-carrousel__items")
 
+    bestProducts.forEach(element=>{
+        let visualProduct = element.producto
 
-    dataFeaturedProducts.listCategories.forEach(product =>{
-        let cProduct = document.createElement("div")
-        cProduct.classList.add("c-categoria")
+        if (visualProduct){
+            
+            let cProduct = document.createElement("div")
+            cProduct.classList.add("c-categoria")
+    
+            const viewCProduct = ` 
+                <img class="c-categoria__img" src="${visualProduct.imgUrl}" alt="">
+                <div class="c-categoria__title">${visualProduct.name}</div>`
+            
+            cProduct.insertAdjacentHTML("afterbegin",viewCProduct)
+            productItems.insertAdjacentElement("afterbegin",cProduct)
+        }
+       
 
-        const viewCProduct = ` 
-            <img class="c-categoria__img" src="${product.imgUrl}" alt="">
-            <div class="c-categoria__title">${product.name}</div>
-        `
-        cProduct.insertAdjacentHTML("afterbegin",viewCProduct)
-        productItems.insertAdjacentElement("afterbegin",cProduct)
-    });
+    })
 
+    
     return cfeaturedProducts
 
 }

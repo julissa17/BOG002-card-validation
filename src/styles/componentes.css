@@ -56,7 +56,8 @@
 
 
 .c-Product{
-    width: 256px;
+    width: 250px;
+    height: 360px;
     display: flex;
     padding: 20px 0;
     flex-direction: column;
@@ -99,7 +100,7 @@
     .c-carrousel__items{
         display: flex;
         overflow-x: scroll;
-        padding: 15px 0;
+        padding: 15px 5px;
     }
         .c-carrousel__items::-webkit-scrollbar{
             height: 5px;

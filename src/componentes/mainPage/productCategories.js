@@ -1,6 +1,5 @@
-import {kanu} from "../database/data.js";
-import {renderProduct} from "./product.js";
-import {renderProducts} from "./mainPage/listProducts.js"
+import {kanu} from "../../database/data.js";
+import {renderProducts} from "./listProducts.js"
 
 //creo el componente categorias de productos
 const productCategories = ()=>{

@@ -143,6 +143,10 @@ html{
             padding-top: 5px;
         }
 
+.notFound{
+    width:90%;
+}
+
 @media (min-width:500px){
     .footer{
         flex-direction: row;
