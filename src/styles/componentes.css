@@ -102,13 +102,6 @@
         overflow-x: scroll;
         padding: 15px 5px;
     }
-        .c-carrousel__items::-webkit-scrollbar{
-            height: 5px;
-        }
-        .c-carrousel__items::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 4px;
-        }
 
 
 .c-categoria{
@@ -174,6 +167,16 @@
                 width: 100%;
                 font-size: 1.4rem;
             }
+
+
+.c-scroll::-webkit-scrollbar{
+    height: 5px;
+    width: 10px;
+}
+.c-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
 
 h2{
     font-weight: 500;

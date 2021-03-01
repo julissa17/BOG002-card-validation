@@ -1,3 +1,5 @@
+
+
 const header = ()=>{
     const view = `
     <div class="header__left">
@@ -61,11 +63,22 @@ const header = ()=>{
     cHeader.classList.add("header")
     cHeader.innerHTML = view
     
+    let buttonCart = cHeader.querySelector(".header__icon-canasta")
+
+
+    buttonCart.addEventListener("click", ()=>{
+
+        let shoopingCart = document.querySelector(".shoopingCart")
+
+        shoopingCart.classList.add("shoopingCart--visible")
+    })
+
     return cHeader
 }
 
 export {header}
 
+//TODO cambiar el buscar por un input
 
 // <!-- <header class="header">
 

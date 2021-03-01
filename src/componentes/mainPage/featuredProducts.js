@@ -3,7 +3,7 @@ import {bestProducts} from "../../database/data.js"
 const featuredProducts = ()=>{
     const view = `
     <div class="c-carrousel__title">Nuestros productos más destacados</div>
-    <div class="c-carrousel__items"></div>
+    <div class="c-carrousel__items c-scroll"></div>
     `
     const cfeaturedProducts = document.createElement("section");
     cfeaturedProducts.classList.add("c-carrousel");
@@ -37,6 +37,7 @@ const featuredProducts = ()=>{
 
 export{featuredProducts}
 
+//TODO buscar como se hace un loading para el momento de inyectar los productos
 {/* <section class="c-carrousel">
         <div class="c-carrousel__title">Nuestras Categorías</div>
         <div class="c-carrousel__items">

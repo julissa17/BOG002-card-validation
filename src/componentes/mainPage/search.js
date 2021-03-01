@@ -19,3 +19,5 @@ export {search}
 //         <div class="buscador__text">Buscar</div>
 //         <div class="buscador__icon-lupa"></div>
 // </div> 
+
+//FIXME debo cambiar buscar por input y hacer la función que ingrese en el header

@@ -20,3 +20,5 @@ export{renderProduct}
 //             <div class="c-Product__price">$2.650</div>
 //             <div class="c-Product__button c-button">PAGAR</div>
 </div> */
+
+//FIXME crear un layout (div) donde este la informacion del producto

@@ -20,6 +20,7 @@ html{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* diseño de header general */
 .header{
     width: 100%;
     height: 71px;
@@ -55,7 +56,7 @@ html{
             background: url(./assets/header__carrito.svg)center/contain no-repeat;
         }
 
-
+/* diseño del contenedor de productos */
 .productos{
     display: flex;
     flex-direction: column;
@@ -79,35 +80,135 @@ html{
 
 
 
-.metodoEntrega {
+/* Componente carrito */
+.shoopingCart {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    right:0;
+    background: white;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  
+.shoopingCart--visible{
+    transition: all 0.5s;
+    transform: translateX(0);
+
+}
+  
+  /*  CART --- HEADER CONTAINER */
+  .shoopingCart__header {
+    font-size: 14px;
+    background-color: #EA3449;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 71px;
+  }
+  .shoopingCart__header .shoopingCart__emptyCart {
+    font-style: italic;
+  }
+  .shoopingCart__header .l-shoopingCart__close i {
+    font-size: 18px;
+  }
+   
+  
+  /* CART --- PRODUCTOS CONTAINER */
+  .shoopingCart__products {
+    overflow-y: scroll;
+    height: calc(100vh - 71px - 110px);
+    padding: 0px 5px;
+  }
+  
+  
+  /* CART --- PRODUCT CONTAINER */
+  .shoopingCartProduct {
+    font-size: 14px;
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px;
+    grid-template-columns: 20px 80px 1fr;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  
+  .shoopingCartProduct:last-child {
+    border-bottom: none;
+  }
+  
+  .shoopingCartProduct__remove {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .shoopingCartProduct__img {
+    height: 90px;
+    width: 100%;
+    background: goldenrod;
+  }
+  
+  .l-shoopingCartProduct__info {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .shoopingCartProduct__price {
+    font-size: 12px;
+    font-style: italic;
+  }
+  
+  .l-shoppingCartProduct__infoValue {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .l-shoopingCartProduct__selectQuantity {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(238, 238, 217);
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
-    width: 100%;
-}
-    .formulario__checkbox{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-       
-    }
+    width: 95px;
+  }
+  
+  .l-shoopingCartProduct__selectQuantity .c-button {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+  }
+  
+  /* CART -- SUMMARY CONTAINER */
+  .shoopingCart__summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px;
+    padding-right: 15px;
+    border-top: 1px solid #d5d5d5;
+    font-size: 14px;
+    height: 110px;
+  }
+  
+  .l-shoopingCart__total {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .shoopingCart__buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
 
-    .formulario__checkbox > label{
-        font-size: 1.4rem;
-        font-weight: 400;
-    }
-    .formulario__checkbox input {
-        margin-left: 10px;
-    }
-
-
-
-
+/* componente footer */
 .footer{
     width: 100%;
     background: var(--orange-main);
@@ -159,6 +260,10 @@ html{
 }
 
 @media (min-width:425px){
+    .shoopingCart {
+        width: 400px;
+      }
+
     .productos__container{
         flex-direction: row;
         flex-wrap: wrap;
@@ -166,3 +271,33 @@ html{
         align-items: center;
     }
 }
+
+
+
+
+/* diseño del contenedor metodo de entrega */
+.metodoEntrega {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(238, 238, 217);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+    .formulario__checkbox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+       
+    }
+
+    .formulario__checkbox > label{
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    .formulario__checkbox input {
+        margin-left: 10px;
+    }

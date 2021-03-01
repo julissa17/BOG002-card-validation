@@ -3,8 +3,6 @@
         //productos == objeto, nombre, img, precio, units, stock
 // productos destacados, lista de objetos con los productos con mayor número de unidades vendidas
 
-//TODO crear el objeto de producto
-//TODO crear la funcion que crea los objetos
 
 //creo el componente producto
 class Product {

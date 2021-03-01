@@ -8,7 +8,7 @@ const productCategories = ()=>{
     categories.classList.add("c-carrousel")
 
     const view = `<div class="c-carrousel__title">Nuestras Categorías</div>
-                  <div class="c-carrousel__items"></div>`
+                  <div class="c-carrousel__items c-scroll"></div>`
 
     categories.insertAdjacentHTML("afterbegin",view)
 
@@ -52,3 +52,6 @@ export {productCategories}
     <img class="c-categoria__img" src="./assets/categoria__img-purina.png" alt="">
     <div class="c-categoria__title">Alimento seco</div>
 </div>  */
+
+
+//TODO hacer función deslizar
