@@ -54,6 +54,7 @@ html{
         }
         .header__icon-canasta{
             background: url(./assets/header__carrito.svg)center/contain no-repeat;
+            cursor: pointer;
         }
 
 /* diseño del contenedor de productos */
@@ -149,9 +150,11 @@ html{
   }
   
   .shoopingCartProduct__img {
+    background: url('./assets/monello.jpg')center/cover no-repeat;
     height: 90px;
+    width: 90px;
     width: 100%;
-    background: goldenrod;
+
   }
   
   .l-shoopingCartProduct__info {

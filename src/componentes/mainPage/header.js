@@ -71,6 +71,9 @@ const header = ()=>{
         let shoopingCart = document.querySelector(".shoopingCart")
 
         shoopingCart.classList.add("shoopingCart--visible")
+
+        //COMPLETE se esconde cualquier elemento que quede por fuera del viewport del body, con eso eliminamos el scroll del body
+        document.body.style.overflow = 'hidden'
     })
 
     return cHeader

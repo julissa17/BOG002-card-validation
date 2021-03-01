@@ -172,7 +172,16 @@ const shoopingCart = () =>{
     let buttonClose = cShoppingCart.querySelector(".l-shoopingCart__close")
     buttonClose.addEventListener("click", ()=>{
         cShoppingCart.classList.remove("shoopingCart--visible")
+
+
+        //COMPLETE eliminar cualquier estilo de body
+        document.body.style = ''
     })
+
+    let buttonPayment = cShoppingCart.querySelector('#shoopingCartPayment')
+
+
+    buttonPayment.addEventListener('click', ()=> {window.location = '../../src/validation.html'})
 
 
     return cShoppingCart

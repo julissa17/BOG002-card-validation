@@ -71,74 +71,106 @@
     <main class="forms">
         
     </main>
+
+
+
+    <!-- UN UNICO FORMULARIO PARA TODOS, AUNQUE CADA UNO SEA UNA SECTION INDEPENDIENTE -->
     
-    <section id="formulario_contacto" class="formulario" >
-        <h1 class="formulario__title">Información de contacto</h1>
-        
-        <form class="formulario__datos">
-
-            <div class="formulario__input">
-                <label for="name">Nombre(s) y apellido(s):</label>
-                <input type="text" id="name" name="name">
-            </div>
-
-            <div class="formulario__input">
-                <label for="identification">N° de identificación:</label>
-                <input type="number" id="identification" name="identification">
-            </div>
-
-            <div class="formulario__input">
-                <label for="mail">Correo electrónico</label>
-                <input type="email" id="mail" name="mail">
-            </div>   
-               
-        </form>
-    </section>
-
-    <section id="formulario_envio" class="formulario" >
-        
-        <h1 class="formulario__title">Información de envíos</h1>       
-        
-        <div class="formulario__metodoEnvio">
-
-            <h2>Forma de entrega</h2>
-
-            <div class="metodoEntrega">
-
-                <div class="formulario__checkbox">
-                    <label> Entrega a domicilio
-                        <input type="radio" checked="checked" name="radio">
-                    </label>
-                </div>
-
-                <div class="formulario__checkbox">
-                    <label>Recoger en tienda
-                        <input type="radio" name="radio">
-                    </label>
-                </div>
-                
-                
-            </div>
-        </div>
+    <form action="">
+        <section id="formulario_contacto" class="formulario" >
+            <h2 class="formulario__title">Información de contacto</h2>
             
-        <form class="formulario__datos">
-            
-            <div class="formulario__input">
-                <label for="address">Dirección:</label>
-                <input type="text" id="address" >
-            </div>
-            <div class="formulario__input">
-                <label for="city">Ciudad/municipio:</label>
-                <input type="text" id="city" >
-            </div>
-            <div class="formulario__input">
-                <label for="state">Departamento</label>
-                <input type="text" id="state" >
-            </div>   
-               
-        </form>
+            <!-- <form class="formulario__datos"> -->
+    
+                <div class="formulario__input">
+                    <label for="name">Nombre(s) y apellido(s):</label>
+                    <input type="text" id="name" name="name">
+                </div>
+    
+                <div class="formulario__input">
+                    <label for="identification">N° de identificación:</label>
+                    <input type="number" id="identification" name="identification">
+                </div>
+    
+                <div class="formulario__input">
+                    <label for="mail">Correo electrónico</label>
+                    <input type="email" id="mail" name="mail">
+                </div>   
+                   
+            <!-- </form> -->
+        </section>
 
-    </section>
+
+        <section id="formulario_envio" class="formulario" >
+        
+            <h2 class="formulario__title">Información de envíos</h2>       
+            
+            <div class="formulario__metodoEnvio">
+    
+                <h2>Forma de entrega</h2>
+    
+                <div class="metodoEntrega">
+    
+                    <div class="formulario__checkbox">
+                        <label> Entrega a domicilio
+                            <input type="radio" checked="checked" name="radio">
+                        </label>
+                    </div>
+    
+                    <div class="formulario__checkbox">
+                        <label>Recoger en tienda
+                            <input type="radio" name="radio">
+                        </label>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+                
+            <!-- <form class="formulario__datos"> -->
+                
+                <div class="formulario__input">
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" >
+                </div>
+                <div class="formulario__input">
+                    <label for="city">Ciudad/municipio:</label>
+                    <input type="text" id="city" >
+                </div>
+                <div class="formulario__input">
+                    <label for="state">Departamento</label>
+                    <input type="text" id="state" >
+                </div>   
+                
+            <!-- </form> -->
+    
+        </section>
+
+        <section id="formulario_card" class="formulario" >
+        
+            <h2 class="formulario__title">Información de pago</h2>       
+                
+                <div class="formulario__input">
+                    <label for="address">Numero de tarjeta:</label>
+                    <input type="text" id="cardNumber" type="number" pattern="[0-9]+" required>
+                </div>
+                <div class="formulario__input">
+                    <label for="city">Fecha de vencimiento:</label>
+                    <input type="text" id="cardDateExpire" >
+                </div>
+                <div class="formulario__input">
+                    <label for="state">Codigo de verificacion: </label>
+                    <input type="text" id="cardVerificationNumber" >
+                </div>   
+
+            <input style="border: none; outline: none;  width: 300px; margin: auto;margin-top: 20px;" class="c-button" type="submit" value="Realizar Pago">
+    
+        </section>
+
+    </form>
+
+
+
 
 
 
