@@ -29,6 +29,14 @@
     height: 30px;
 }
 
+.plus{
+    background-image: url('../assets/button-plus.svg');
+}
+
+.minus{
+    background-image: url('../assets/button-minus.svg');
+}
+
 
 /* Componente Search */
 .c-buscador{
@@ -114,15 +122,14 @@
         margin-bottom: 5px;
     }
     .c-carrousel__items{
-        display: flex;
         overflow-x: scroll;
         padding: 15px 5px;
+        white-space: nowrap;
     }
 
 
 .c-categoria{
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     padding: 14px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -140,6 +147,9 @@
         font-weight: 600;
         text-align: center;
         text-transform: capitalize;
+    }
+    .c-categoria:last-child{
+        margin-right: 0;
     }
 
 

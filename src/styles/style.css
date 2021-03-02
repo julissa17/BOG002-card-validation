@@ -1,4 +1,4 @@
-@import "./styles/componentes.css";
+@import "./componentes.css";
 
 :root{
     --green-main:#2EC4B6;
@@ -37,7 +37,7 @@ html{
         align-items: center;
     }
         .header__icon-menu{
-            background: url(./assets/header__menu.svg)center/cover no-repeat;
+            background: url('../assets/header__menu.svg')center/cover no-repeat;
             margin-right: 15px;
         }
         .header__logo{
@@ -53,7 +53,7 @@ html{
             margin-left: 10px;
         }
         .header__icon-canasta{
-            background: url(./assets/header__carrito.svg)center/contain no-repeat;
+            background: url('../assets/header__carrito.svg')center/contain no-repeat;
             cursor: pointer;
         }
 
@@ -63,6 +63,8 @@ html{
     flex-direction: column;
     justify-content: center;
     padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .productos__title{
     font-weight: 500;
@@ -76,6 +78,28 @@ html{
     gap: 20px;
 }
 
+.c-Product__buttonUnits{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+}
+  .c-Product__buttonUnitsText{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--green-main);
+    text-align: center;
+  }
+
+.buttonUnits{
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: var(--green-main);
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 
@@ -148,7 +172,7 @@ html{
   }
   
   .shoopingCartProduct__img {
-    background: url('./assets/monello.jpg')center/cover no-repeat;
+    background: url('../assets/monello.jpg')center/cover no-repeat;
     height: 90px;
     width: 90px;
     width: 100%;
@@ -225,13 +249,13 @@ html{
         justify-content: space-between;
     }
         .footer__icon-whatsapp{
-            background: url('./assets/icon-whatsapp.svg')center/contain no-repeat;
+            background: url('../assets/icon-whatsapp.svg')center/contain no-repeat;
         }
         .footer__icon-instagram{
-            background: url("./assets/icon-instagram.svg")center/contain no-repeat;
+            background: url("../assets/icon-instagram.svg")center/contain no-repeat;
         }
         .footer__icon-facebook{
-            background: url('./assets/icon-facebook.svg')center/contain no-repeat;
+            background: url('../assets/icon-facebook.svg')center/contain no-repeat;
         }
     .footer__text{
         margin-top: 20px;
