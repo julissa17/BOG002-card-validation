@@ -1,4 +1,4 @@
-
+import {search} from './search.js'
 
 const header = ()=>{
     const view = `
@@ -58,30 +58,49 @@ const header = ()=>{
           <div class="header__icon-canasta icon"></div>
           </div>
     `
-
     const cHeader = document.createElement("header")
     cHeader.classList.add("header")
     cHeader.innerHTML = view
     
     let buttonCart = cHeader.querySelector(".header__icon-canasta")
 
+    const cHeaderRight = cHeader.querySelector('.header__right')
 
     buttonCart.addEventListener("click", ()=>{
-
+      //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
         let shoopingCart = document.querySelector(".shoopingCart")
 
         shoopingCart.classList.add("shoopingCart--visible")
 
-        //COMPLETE se esconde cualquier elemento que quede por fuera del viewport del body, con eso eliminamos el scroll del body
         document.body.style.overflow = 'hidden'
     })
+
+
+    // cHeader.insertAdjacentElement('afterend',search())
+    
+    
+    // window.onresize = ()=>{
+    //   if (window.innerWidth > 650){
+    //     let cSearch = document.querySelector('.c-buscador')
+    //     cSearch.remove()
+    //   }
+    //   else{
+    //     console.log('adios');
+    //   };
+  
+    //   // > 425
+  
+  
+    // }
+
+
 
     return cHeader
 }
 
 export {header}
 
-//TODO cambiar el buscar por un input
+//TODO hacer la función para inyectar el search
 
 // <!-- <header class="header">
 

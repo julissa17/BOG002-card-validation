@@ -33,25 +33,36 @@
 /* Componente Search */
 .c-buscador{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 256px;
     margin: 20px auto;
     padding: 10px 15px;
     border-radius: 10px;
     background: var(--orange-second);
+    
+
 }
-
-    .c-buscador > .buscador__text{
-        color: white;
-        font-weight: bold;
-        font-size: 1.6rem;
-    }
-
     .c-buscador > .buscador__icon-lupa{
         width: 16px;
         height: 16px;
+        margin-right: 10px;
         background: url("../assets/icon-lupa.svg")center/contain no-repeat;
+    }
+
+    .buscador__text{
+        color:white;
+        background:var(--orange-second);
+        border: none;
+        font-weight: normal;
+        font-size: 1.6rem;
+        width: 80%;
+        outline: none;
+        padding: 5px;
+    }
+
+    .buscador__text::placeholder{
+        color: white;
+        text-align: center;
     }
 
 
@@ -65,26 +76,31 @@
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
-    .c-Product__img{
-        width: 75%;
-        height: 195px;
-        border-radius: 4px;
-        margin-bottom: 10px;
+    .c-Product__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .c-Product__name{
-        width: 80%;
-        font-weight: 400;
-        font-size: 1.4rem;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .c-Product__price{
-        font-weight: 500;
-        font-size: 2rem;
-        text-align: center;
-        color: var(--orange-main);
-        margin-bottom: 10px;
-    }
+        .c-Product__img{
+            width: 75%;
+            height: 195px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .c-Product__name{
+            width: 80%;
+            font-weight: 400;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .c-Product__price{
+            font-weight: 500;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--orange-main);
+            margin-bottom: 10px;
+        }
 
 .c-carrousel{
     display: flex;
