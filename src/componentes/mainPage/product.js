@@ -1,8 +1,10 @@
 function renderProduct (producto){
-    const view = `
-    <img class="c-Product__img" src="${producto.imgUrl}" alt="">
-    <div class="c-Product__name">${producto.name}</div>
-    <div class="c-Product__price">$ ${producto.price}</div>
+    const view = `  
+    <div class="c-Product__info">
+        <img class="c-Product__img" src="${producto.imgUrl}" alt="">
+        <div class="c-Product__name">${producto.name}</div>
+        <div class="c-Product__price">$ ${producto.price}</div>
+    </div>
     <div class="c-Product__button c-button">PAGAR</div>`
 
     const product = document.createElement('div');
@@ -14,11 +16,12 @@ function renderProduct (producto){
 
 export{renderProduct}
 
-/* <div class="c-Product">
-//             <img class="c-Product__img" src="./assets/monello.jpg" alt="">
-//             <div class="c-Product__name">Alimento para perro Monello x 1.5 Kg</div>
-//             <div class="c-Product__price">$2.650</div>
-//             <div class="c-Product__button c-button">PAGAR</div>
-</div> */
+{/* <div class="c-Product">
+      <div class="c-Product__info">
+        <img class="c-Product__img" src="./assets/monello.jpg" alt="">
+        <div class="c-Product__name">Alimento para perro Monello x 1.5 Kg</div>
+        <div class="c-Product__price">$2.650</div>
+      </div>
+      <div class="c-Product__button c-button">PAGAR</div>
+</div>  */}
 
-//FIXME crear un layout (div) donde este la informacion del producto
