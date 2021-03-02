@@ -70,13 +70,11 @@ html{
     margin-bottom: 20px;
 }
 .productos__container{
-    display: flex;
+    display: grid;
     flex-direction: column;
     margin: 0 auto;
+    gap: 20px;
 }
-    .productos__container > div {
-        margin-bottom: 20px;
-    }
 
 
 
@@ -268,10 +266,9 @@ html{
       }
 
     .productos__container{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 }
 
