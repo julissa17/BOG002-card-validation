@@ -109,6 +109,24 @@
             color: var(--orange-main);
             margin-bottom: 5px;
         }
+    
+    .c-Product__buttonPay--hiden{
+        display: none;
+    }
+
+    .c-Product__buttonUnits{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 140px;
+    }
+        .c-Product__buttonUnitsText{
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--green-main);
+            text-align: center;
+        }
 
 .c-carrousel{
     display: flex;

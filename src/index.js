@@ -1,7 +1,6 @@
 import validator from './validator.js';
 import {header} from './componentes/mainPage/header.js';
 import {footer} from './componentes/mainPage/footer.js';
-
 import {productCategories} from './componentes/mainPage/productCategories.js'
 import {listProducts} from './componentes/mainPage/listProducts.js'
 import {featuredProducts} from './componentes/mainPage/featuredProducts.js'
@@ -16,11 +15,11 @@ body.appendChild(search())
 body.appendChild(productCategories())
 body.appendChild(listProducts())
 body.appendChild(featuredProducts())
-body.appendChild(footer())
 body.appendChild(shoopingCart())
+body.appendChild(footer())
+
+let  numberCard = '1234567363628'
 
 
 
 
-
-//con los productos de la primer categoria ya cargados

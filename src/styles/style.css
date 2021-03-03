@@ -78,19 +78,7 @@ html{
     gap: 20px;
 }
 
-.c-Product__buttonUnits{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 140px;
-}
-  .c-Product__buttonUnitsText{
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--green-main);
-    text-align: center;
-  }
+
 
 .buttonUnits{
   width: 30px;
@@ -100,7 +88,12 @@ html{
   background-repeat: no-repeat;
   background-position: center;
 }
-
+.buttonUnits:hover{
+  background-color: var(--green-second);
+}
+.buttonUnits--visible{
+  display: none;
+}
 
 
 /* Componente carrito */

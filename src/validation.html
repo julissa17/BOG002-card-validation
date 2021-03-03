@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="./styles/style.css"> 
    
     <title>Página validación</title>
 </head>
@@ -67,11 +67,11 @@
           <div class="header__icon-canasta icon"></div>
         </div> 
     </header>
-
+<!-- 
     <main class="forms">
         
     </main>
-
+ -->
 
 
     <!-- UN UNICO FORMULARIO PARA TODOS, AUNQUE CADA UNO SEA UNA SECTION INDEPENDIENTE -->
@@ -99,7 +99,6 @@
                    
             <!-- </form> -->
         </section>
-
 
         <section id="formulario_envio" class="formulario" >
         
@@ -151,21 +150,24 @@
             <h2 class="formulario__title">Información de pago</h2>       
                 
                 <div class="formulario__input">
+                    <i class="fas fa-credit-card icon"></i>
                     <label for="address">Numero de tarjeta:</label>
-                    <input type="text" id="cardNumber" type="number" pattern="[0-9]+" required>
+                    <input type="text" id="cardNumber" type="number" pattern="[0-9]" required>
                 </div>
                 <div class="formulario__input">
                     <label for="city">Fecha de vencimiento:</label>
-                    <input type="text" id="cardDateExpire" >
+                    <input type="text" id="cardDateExpire" required >
                 </div>
                 <div class="formulario__input">
                     <label for="state">Codigo de verificacion: </label>
                     <input type="text" id="cardVerificationNumber" >
                 </div>   
-
-            <input style="border: none; outline: none;  width: 300px; margin: auto;margin-top: 20px;" class="c-button" type="submit" value="Realizar Pago">
-    
-        </section>
+                
+            </section>
+            
+        <!-- <input style="border: none; outline: none;  width: 300px; margin: auto;margin-top: 20px;" class="c-button" type="submit" value="Realizar Pago"> -->
+            
+        <button class="c-button">enviar</button>
 
     </form>
 

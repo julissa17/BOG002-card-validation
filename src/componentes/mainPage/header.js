@@ -77,6 +77,7 @@ const header = ()=>{
       moveSearch()
     }
 
+
     //evento cargar la pagina
     window.onload = ()=> {
       moveSearch()
