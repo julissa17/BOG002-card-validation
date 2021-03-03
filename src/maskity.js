@@ -14,4 +14,5 @@ function maskify(cardNumber){
     }
 }
 
-maskify(creditCardNumber)
+
+console.log(maskify("4556364607935616"));
