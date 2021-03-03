@@ -1,34 +1,34 @@
-import {bestProducts} from "../../database/data.js"
+import {bestProducts} from "../../database/data.js";
 
+//componente categoria de productos más vendidos
 const featuredProducts = ()=>{
-    const view = `
-    <div class="c-carrousel__title">Nuestros productos más destacados</div>
-    <div class="c-carrousel__items c-scroll"></div>
-    `
+    const view = `  <div class="c-carrousel__title">Nuestros productos más destacados</div>
+                    <div class="c-carrousel__items c-scroll"></div>`;
+
     const cfeaturedProducts = document.createElement("section");
     cfeaturedProducts.classList.add("c-carrousel");
-    cfeaturedProducts.insertAdjacentHTML("afterbegin",view)
+    cfeaturedProducts.insertAdjacentHTML("afterbegin",view);
 
-    const productItems = cfeaturedProducts.querySelector(".c-carrousel__items")
+    const productItems = cfeaturedProducts.querySelector(".c-carrousel__items");
 
+    //agrego cada uno de los productos en la categoria
     bestProducts.forEach(element=>{
-        let visualProduct = element.producto
+        let visualProduct = element.producto;
 
         if (visualProduct){
             
-            let cProduct = document.createElement("div")
-            cProduct.classList.add("c-categoria")
+            let cProduct = document.createElement("div");
+            cProduct.classList.add("c-categoria");
     
-            const viewCProduct = ` 
-                <img class="c-categoria__img" src="${visualProduct.imgUrl}" alt="">
-                <div class="c-categoria__title">${visualProduct.name}</div>`
+            const viewCProduct = `  <img class="c-categoria__img" src="${visualProduct.imgUrl}" alt="">
+                                    <div class="c-categoria__title">${visualProduct.name}</div>`;
             
-            cProduct.insertAdjacentHTML("afterbegin",viewCProduct)
-            productItems.insertAdjacentElement("afterbegin",cProduct)
-        }
+            cProduct.insertAdjacentHTML("afterbegin",viewCProduct);
+            productItems.insertAdjacentElement("afterbegin",cProduct);
+        };
        
 
-    })
+    });
 
     
     return cfeaturedProducts
