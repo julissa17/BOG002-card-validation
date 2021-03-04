@@ -1,3 +1,5 @@
+import{kanu} from '../../database/data.js'
+
 function renderProduct (producto){
   //creo el elemento html 
     const product = document.createElement('div');
@@ -9,27 +11,35 @@ function renderProduct (producto){
         <div class="c-Product__name">${producto.name}</div>
         <div class="c-Product__price">$ ${producto.price}</div>
     </div>
-    <div class="c-Product__buttonPay c-button">PAGAR</div>`
-    product.innerHTML = view;
+    <div class="c-Product__buttonPay c-button">PAGAR</div>
 
-    let buttonPay = product.querySelector('.c-Product__buttonPay');
-
-    const viewbuttonQuantity = `
-        <div class="c-Product__buttonUnits">
+    <div class="c-Product__buttonUnits c-Product__buttonUnits--hidden">
           <div class="buttonUnits plus"></div>
           <p class="c-Product__buttonUnitsText"> Und</p>
           <div class=" buttonUnits minus"></div>
-        </div>`
- 
+      </div>`
+    product.innerHTML = view;
+
+    let buttonPay = product.querySelector('.c-Product__buttonPay');
+    let buttonQuantity = product.querySelector('.c-Product__buttonUnits--hidden')
+    let buttonQuantityPlus = product.querySelector('.plus')
+    let buttonQuantityMinus = product.querySelector('.minus')
+
     buttonPay.addEventListener("click", ()=>{
       console.log('selecciono algún producto');
-      buttonPay.classList.add('c-Product__buttonPay--hiden')
-      product.insertAdjacentHTML('beforeend',viewbuttonQuantity)
+      buttonPay.classList.toggle('c-Product__buttonPay--hidden')
+      buttonQuantity.classList.toggle('c-Product__buttonUnits--hidden')
       addQuantity(producto)
+
     })
-    
-    
-    
+
+    buttonQuantityPlus.addEventListener("click", ()=>{
+      addQuantity(producto,buttonPay,buttonQuantity)
+    })
+
+    buttonQuantityMinus.addEventListener("click" ,()=>{
+      minusQuantity(producto)
+    })
 
     return product
 }
@@ -56,34 +66,57 @@ export{renderProduct}
 
    </div> */}
 
-   function addQuantity(product){
 
-     console.log(product);
+//product -> type (product)
+function addQuantity(product){    
 
-    //  let plus = document.querySelector('.plus');
-    //  plus.addEventListener("click", ()=>{
-    //    console.log('agregando el producto');
-    //  })
-    //  let minus = document.querySelector('.minus');
-    //  console.log(minus);
+    //return -> type (productCart)
+    const productCart = kanu.cart.addProductToCart(product)
 
-   }
+    // encontrar 
+      //product => productos de categorias
+      // productCart => cart
 
-   function minusQuantity(){
-     let minus = document.querySelector('.minus');
-     minus.addEventListener('click',()=>{
-       console.log('pepe');
-     })
-   }
+      // aumentar sus unidades en 
 
 
 
+    //actualizarlo
+    console.log(kanu.cart);
 
- 
-
-   const regVisa = /^3[47][0-9]{13}$/
+}
 
 
-  console.log(regVisa.test('37828224310005'));
-   
-    //visa cambiar el icono a visa....
+
+
+//aplica para
+function minusQuantity(product){
+
+  const productCart = kanu.cart.removeProductToCart(product)
+
+  //match by data-id
+
+      //match product in l-container-products 
+
+      //match productCart in l-container-cart-product
+  if(productCart.units == 0){
+
+    //matchProductInProducts -- > debe cambiar a el otro boton
+
+    //matchProductInCart      --> se debe eliminar
+
+  }else{
+
+    //matchProductInProducts    --> debe aumental la unidad
+
+    //matchProductInCart        --> debe aumentar la unidad
+
+  }
+
+
+  //actualizarlo visualmente
+  console.log(kanu.cart)
+
+
+}
+

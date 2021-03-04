@@ -1,8 +1,9 @@
 .c-button{
-
+    width: 140px;
     background-color: var(--green-main);
     border-radius: 4px;
-    padding: 7px 30px;
+    padding: 7px 0;
+    
 
     font-style: normal;
     font-weight: bold;
@@ -110,7 +111,7 @@
             margin-bottom: 5px;
         }
     
-    .c-Product__buttonPay--hiden{
+    .c-Product__buttonPay--hidden{
         display: none;
     }
 
@@ -128,6 +129,10 @@
             text-align: center;
         }
 
+    .c-Product__buttonUnits--hidden{
+        display: none;
+    }
+    
 .c-carrousel{
     display: flex;
     flex-direction: column;

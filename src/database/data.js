@@ -4,103 +4,158 @@
 // productos destacados, lista de objetos con los productos con mayor número de unidades vendidas
 
 
-//creo el componente producto
+//Clase producto
 class Product {
     constructor (id,nombre, img, precio, stock, numeroVentas){
-        this.id = id
+        this.id = id,
         this.name = nombre,
         this.imgUrl = img,
         this.price =precio,
         this.stock = stock,
         this.numberSale = numeroVentas || 0
+
     }
 }
 
-//creo objeto categoria
+//objeto categoria
 class Categoria {
     constructor (nombre, img){
-        this.name = nombre;
-        this.imgUrl = img;
+        this.name = nombre,
+        this.imgUrl = img,
         this.listProducts = []
     }
 
 }
 
-//creo objeto categorias 
+//Objeto producto a compra
+class ProductCart{
+    constructor(id, nombre, img, precio, unidades){
+        this.id = id;
+        this.name = nombre;
+        this.imgUrl = img;
+        this.price = precio,
+        this.units = unidades
+        this.totalValue = 0
+    }
+}
+
+//objeto tienda, contiene toda la información y funciones
 class Store{
     constructor() {
-        this.categories = []
+        this.categories = [],
         this.lastId = 1
-        // this.cart = new cart()
-
-
+        this.cart = new ShoppingCart()
     }
 
     addCategory(name, imgUrl){
-        const category = new Categoria(name, imgUrl)
-        this.categories.push(category)
+        const category = new Categoria(name, imgUrl);
+        this.categories.push(category);
     }
 
     addProduct (name,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct){
-        const product = new Product(this.lastId,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct)
+        const product = new Product(this.lastId,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct);
 
         this.categories.forEach(element=>{
             if (element.name == name){
                 element.listProducts.push(product)
-            }
-        })
+            };
+        });
 
         this.lastId ++
     }
    
-    //remove
+    //remover
 
     //find
 
 }
 
 
-//class productCart ?
-    //{id,name,price,units}
+
+//aumento una unidad 1 * 2000 = 2000
 
 
 
-//class independiente
+class ShoppingCart {
+    constructor(){
+        this.productLists = [],
+        this.shipping = 0
+    }
+ 
+    //producto -> type (product)
+    addProductToCart(producto){
 
-    //productos = []
-    //descuento = 0
-    //envio = 0
+        //hacemos match con el producto carrito -> type (productCart) | undefined
+        const matchProductCart = this.findProductToCart(producto.id)
 
-    //añadir producto()
+        if(matchProductCart){
+            matchProductCart.units ++
+            matchProductCart.totalValue = matchProductCart.units * matchProductCart.price
+        }
+        else{
+            //newproduct -> type (productCart)
+            let newProductCart = new ProductCart(producto.id, producto.name, producto.imgUrl, producto.price,1)
+            newProductCart.totalValue = newProductCart.units + newProductCart.price
+            this.productLists.push(newProductCart)
+        }
+
+        return matchProductCart
+
+    }
+
+    //product -> type(product)
+    removeProductToCart (producto){
+        let productCartMatch = this.findProductToCart(producto.id);
+       
+        const simulacion = productCartMatch.units-1;
+
+        if (simulacion == 0){
+            let position = this.productLists.indexOf(productCartMatch);
+            this.productLists.splice(position,1);
+            productCartMatch.units = 0
+
+        }else{
+            productCartMatch.units = simulacion
+            productCartMatch.totalValue = productCartMatch.units * productCartMatch.price
+        }
 
 
-    //modificar producto(1,'suma')
+        return productCartMatch
 
-        //buscar el en la lisata cual es el objeto
+    }
 
-            //sumarle 1
+    //producto -> type (product)
+    findProductToCart (id){
+        return this.productLists.find(productList => productList.id == id)
+    }
 
-    //eliminar producto()
-        //buscar en la lista
+    total(){
+        let total = 0
+        this.productLists.forEach(productCart =>{
+            total += productCart.totalValue
+        })
+        return total
+    }
 
+    shippingMethod(method){
 
+        switch (method){
+            case 'shipping':
+                this.shipping = 8000
+                break
+            case 'shop':
+                this.shipping = 0
+                break
+        }
 
-    //ingresar descuento
+    }
 
-    //costo de envio()
-
-    //total()
-    
-
-    
-    //encontra rproducto(id_producto)
-
-
-
+}
 
 
 
 const kanu = new Store()
+
 //agrego una categoria que a su vez le agrego los productos
 kanu.addCategory("alimento", "./assets/monello.jpg")
 // kanu.addProduct("alimento","Alimento para perro Monello x 1.5 Kg","./assets/monello.jpg", 3500, 10,0 )
