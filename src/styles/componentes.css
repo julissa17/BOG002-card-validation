@@ -29,11 +29,18 @@
     height: 30px;
 }
 
+.plus{
+    background-image: url('../assets/button-plus.svg');
+}
+
+.minus{
+    background-image: url('../assets/button-minus.svg');
+}
+
 
 /* Componente Search */
 .c-buscador{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 256px;
     margin: 20px auto;
@@ -41,17 +48,28 @@
     border-radius: 10px;
     background: var(--orange-second);
 }
-
-    .c-buscador > .buscador__text{
-        color: white;
-        font-weight: bold;
-        font-size: 1.6rem;
-    }
-
-    .c-buscador > .buscador__icon-lupa{
+.c-buscador--blanco{
+    width: 40%;
+}
+    .buscador__icon-lupa{
         width: 16px;
         height: 16px;
+        margin-right: 10px;
         background: url("../assets/icon-lupa.svg")center/contain no-repeat;
+    }
+    .buscador__text{
+        color:white;
+        background:var(--orange-second);
+        border: none;
+        font-weight: normal;
+        font-size: 1.6rem;
+        width: 80%;
+        outline: none;
+        padding: 5px;
+    }
+    .buscador__text::placeholder{
+        color: white;
+        text-align: center;
     }
 
 
@@ -65,26 +83,50 @@
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
-    .c-Product__img{
-        width: 75%;
-        height: 195px;
-        border-radius: 4px;
+    .c-Product__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 10px;
     }
-    .c-Product__name{
-        width: 80%;
-        font-weight: 400;
-        font-size: 1.4rem;
-        text-align: center;
-        margin-bottom: 10px;
+        .c-Product__img{
+            width: 75%;
+            height: 195px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .c-Product__name{
+            width: 80%;
+            font-weight: 400;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .c-Product__price{
+            font-weight: 500;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--orange-main);
+            margin-bottom: 5px;
+        }
+    
+    .c-Product__buttonPay--hiden{
+        display: none;
     }
-    .c-Product__price{
-        font-weight: 500;
-        font-size: 2rem;
-        text-align: center;
-        color: var(--orange-main);
-        margin-bottom: 10px;
+
+    .c-Product__buttonUnits{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 140px;
     }
+        .c-Product__buttonUnitsText{
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--green-main);
+            text-align: center;
+        }
 
 .c-carrousel{
     display: flex;
@@ -98,15 +140,14 @@
         margin-bottom: 5px;
     }
     .c-carrousel__items{
-        display: flex;
         overflow-x: scroll;
         padding: 15px 5px;
+        white-space: nowrap;
     }
 
 
 .c-categoria{
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     padding: 14px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -124,6 +165,9 @@
         font-weight: 600;
         text-align: center;
         text-transform: capitalize;
+    }
+    .c-categoria:last-child{
+        margin-right: 0;
     }
 
 

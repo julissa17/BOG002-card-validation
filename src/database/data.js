@@ -6,7 +6,8 @@
 
 //creo el componente producto
 class Product {
-    constructor (nombre, img, precio, stock, numeroVentas){
+    constructor (id,nombre, img, precio, stock, numeroVentas){
+        this.id = id
         this.name = nombre,
         this.imgUrl = img,
         this.price =precio,
@@ -29,6 +30,10 @@ class Categoria {
 class Store{
     constructor() {
         this.categories = []
+        this.lastId = 1
+        // this.cart = new cart()
+
+
     }
 
     addCategory(name, imgUrl){
@@ -37,13 +42,15 @@ class Store{
     }
 
     addProduct (name,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct){
-        const product = new Product(nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct)
+        const product = new Product(this.lastId,nombreProduct, imgProduct, precioProduct, stockProduct, numeroVentasProduct)
 
         this.categories.forEach(element=>{
             if (element.name == name){
                 element.listProducts.push(product)
             }
         })
+
+        this.lastId ++
     }
    
     //remove
@@ -51,6 +58,45 @@ class Store{
     //find
 
 }
+
+
+//class productCart ?
+    //{id,name,price,units}
+
+
+
+//class independiente
+
+    //productos = []
+    //descuento = 0
+    //envio = 0
+
+    //añadir producto()
+
+
+    //modificar producto(1,'suma')
+
+        //buscar el en la lisata cual es el objeto
+
+            //sumarle 1
+
+    //eliminar producto()
+        //buscar en la lista
+
+
+
+    //ingresar descuento
+
+    //costo de envio()
+
+    //total()
+    
+
+    
+    //encontra rproducto(id_producto)
+
+
+
 
 
 
@@ -165,7 +211,6 @@ kanu.categories.forEach (categoria =>{
 
 
 export {kanu, bestProducts}
-
 
 
 

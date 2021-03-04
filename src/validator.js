@@ -1,6 +1,6 @@
 const validator = {
   isValid,
-
+  maskify
 };
 
 
@@ -37,6 +37,19 @@ function isValid (numberCard){
 
 }
 
+function maskify(cardNumber){
+    let lengthCard = cardNumber.length
+
+    if (lengthCard <= 4){
+        return cardNumber;
+    }
+    else{
+        let lengthNumber = cardNumber.length-4;
+        let maskifyNumber = '#'.repeat(lengthNumber);
+        let finalNumber = cardNumber.slice(-4);
+        return maskifyNumber+finalNumber;
+    }
+}
 
 export default validator;
 
