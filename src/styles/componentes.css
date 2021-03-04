@@ -21,6 +21,11 @@
     background-color: #2D9CDB;
 }
 
+.c-button--pay{
+    outline: 0;
+    border: none;
+}
+
 .c-button--blue:hover{
     background-color: #2F80ED;
 }
@@ -178,18 +183,29 @@
 
 
 /* COMPONENTE FORMULARIO */
+.c-formulario{
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    width: 90%;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .formulario{
     display: flex;
     flex-direction: column;
-    width: 90%;
-    padding: 10px;
-    margin: 0 auto;
+    width: 100%;
+    max-width:500px
+    
 }
 
     .formulario__title{
         font-weight: 600;
         font-size: 1.8rem;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        
     }
 
     .formulario__datos{
@@ -197,10 +213,11 @@
         width: 100%;
     }
 
-        .formulario__input{
-            display: flex;
-            flex-direction: column;
-        }
+    .formulario__input{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
 
             .formulario__input > label{
                 font-size: 1.4rem;
@@ -241,10 +258,3 @@ h2{
 
 
 
-
-.medio_pago{
-    background-color: beige;
-    padding: 5px;
-    border-radius: 4px;
-}
-  

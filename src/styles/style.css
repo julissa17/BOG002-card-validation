@@ -321,3 +321,10 @@ html{
     .formulario__checkbox input {
         margin-left: 10px;
     }
+
+    
+.medio_pago{
+  background-color: beige;
+  padding: 5px;
+  border-radius: 4px;
+}
