@@ -37,19 +37,18 @@ function isValid (numberCard){
 
 }
 
-function maskify(cardNumber){
-    let lengthCard = cardNumber.length
 
-    if (lengthCard <= 4){
-        return cardNumber;
-    }
-    else{
-        let lengthNumber = cardNumber.length-4;
-        let maskifyNumber = '#'.repeat(lengthNumber);
-        let finalNumber = cardNumber.slice(-4);
-        return maskifyNumber+finalNumber;
-    }
-}
+
+function maskify(numberCard) {
+    var size = creditCardNumber.length;//saco el tamaño total del número de tarjeta
+    var newCreditCard = "";
+    for(var i = 0; i< size - 4;i++)//declaro el recorrido sin las últimas 4 cifras 
+      {
+        newCreditCard += "#";//reemplazo
+      }
+     return newCreditCard + creditCardNumber.substring(size-4,size);//con substring me aseguro de incluir las ultimas 4 cifras sin modificarlas 
+    
+  }
 
 export default validator;
 

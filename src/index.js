@@ -18,8 +18,7 @@ body.appendChild(featuredProducts())
 body.appendChild(shoopingCart())
 body.appendChild(footer())
 
-let  numberCard = '1234567363628'
 
 
-
-
+// validator.isValid()
+// validator.maskify()
