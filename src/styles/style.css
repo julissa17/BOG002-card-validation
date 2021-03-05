@@ -114,26 +114,33 @@ html{
 }
   
   /*  CART --- HEADER CONTAINER */
-  .shoopingCart__header {
-    font-size: 14px;
+.shoopingCart__header {
+    font-size: 1.4rem;
     background-color: #EA3449;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0px 15px;
     height: 71px;
   }
-  .shoopingCart__header .shoopingCart__emptyCart {
-    font-style: italic;
-  }
-  .shoopingCart__header .l-shoopingCart__close i {
-    font-size: 18px;
-  }
-   
+    .shoopingCart__header .shoopingCart__title{
+      font-size: 2rem;
+    }
+
+    .shoopingCart__header .shoopingCart__emptyCart {
+      font-style: italic;
+      cursor: pointer;
+    }
+
+    .shoopingCart__header .l-shoopingCart__close{
+      background: url('../assets/carrito/close__header.svg')center/cover no-repeat;
+      cursor: pointer;
+    }
+    
   
   /* CART --- PRODUCTOS CONTAINER */
-  .shoopingCart__products {
+.shoopingCart__products {
     overflow-y: scroll;
     height: calc(100vh - 71px - 110px);
     padding: 0px 5px;
@@ -141,10 +148,10 @@ html{
   
   
   /* CART --- PRODUCT CONTAINER */
-  .shoopingCartProduct {
+.shoopingCartProduct {
     font-size: 14px;
     display: grid;
-    gap: 10px;
+    gap: 8px;
     justify-items: center;
     align-items: center;
     width: 100%;
@@ -153,78 +160,90 @@ html{
     border-bottom: 1px solid #c7c7c7;
   }
   
-  .shoopingCartProduct:last-child {
+.shoopingCartProduct:last-child {
     border-bottom: none;
   }
   
-  .shoopingCartProduct__remove {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+    .shoopingCartProduct__remove {
+      background: url('../assets/carrito/close__cartProduct.svg')center/cover no-repeat;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
   
-  .shoopingCartProduct__img {
-    background: url('../assets/monello.jpg')center/cover no-repeat;
-    height: 90px;
-    width: 90px;
-    width: 100%;
+    .shoopingCartProduct__img {
+      background: url('../assets/monello.jpg')center/cover no-repeat;
+      height: 90px;
+      width: 90px;
+      width: 100%;
 
-  }
-  
-  .l-shoopingCartProduct__info {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .shoopingCartProduct__price {
-    font-size: 12px;
-    font-style: italic;
-  }
-  
+    }
+    
+    .l-shoopingCartProduct__info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+        /* .shoopingCartProduct__name{
+          width: 100%;
+        } */
+        .shoopingCartProduct__price {
+          font-size: 12px;
+          font-style: italic;
+        }
+      
   .l-shoppingCartProduct__infoValue {
     display: flex;
     justify-content: space-between;
   }
-  
-  .l-shoopingCartProduct__selectQuantity {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 140px;
-  }
-  
-  .l-shoopingCartProduct__selectQuantity .c-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:30px ;
-  }
+    
+    .l-shoopingCartProduct__selectQuantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 110px;
+    }
+    
+      .l-shoopingCartProduct__selectQuantity .c-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:25px;
+        height: 25px;
+        cursor: pointer;
+      }
+
+    .shoopingCartProduct__totalValue{
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
   
   /* CART -- SUMMARY CONTAINER */
   .shoopingCart__summary {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px 20px;
-    padding-right: 15px;
+    padding: 15px 15px;
     border-top: 1px solid #d5d5d5;
-    font-size: 14px;
+    font-size: 1.6rem;
     height: 110px;
   }
   
-  .l-shoopingCart__total {
-    display: flex;
-    justify-content: space-between;
-  }
+    .l-shoopingCart__total {
+      display: flex;
+      justify-content: space-between;
+    }
   
-  .shoopingCart__buttons {
-    display: flex;
-    justify-content: space-around;
-  }
+    .shoopingCart__buttons {
+      display: flex;
+      justify-content: space-around;
+    }
   
+  .buttonCart{
+    width: 120px;
+  }
 
 /* componente footer */
 .footer{

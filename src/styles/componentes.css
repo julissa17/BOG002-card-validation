@@ -37,10 +37,14 @@
 
 .plus{
     background-image: url('../assets/button-plus.svg');
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 .minus{
     background-image: url('../assets/button-minus.svg');
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 

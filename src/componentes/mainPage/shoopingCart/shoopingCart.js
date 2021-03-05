@@ -8,12 +8,12 @@ const shoopingCart = () => {
                             <h2 class="shoopingCart__title">Mi Canasta</h2>
                             <p class="shoopingCart__emptyCart">Vaciar canasta</p>
                         </div>
-                        <div class="l-shoopingCart__close">
-                            <i class="far fa-times-circle"></i>
-                        </div>
+                        <div class="l-shoopingCart__close icon"></div>
                     </div>
 
-                    <div class="shoopingCart__products c-scroll"></div>
+                    <div class="shoopingCart__products c-scroll">
+                    
+                    </div>
                     
                     <div class="shoopingCart__summary">
                         <div class="l-shoopingCart__total">
@@ -21,16 +21,31 @@ const shoopingCart = () => {
                             <p id="shoopingCartTotalValue" class="shoopingCart__summaryValue">$ 0000</p>
                         </div>
                         <div class="shoopingCart__buttons">
-                            <div id="shoopingCartPayment" class="c-button">FINALIZAR</div>
-                            <div id="shoopingCartClose" class="c-button c-button--blue">VOLVER</div>
+                            <div id="shoopingCartPayment" class="c-button buttonCart">FINALIZAR</div>
+                            <div id="shoopingCartClose" class="c-button c-button--blue buttonCart">VOLVER</div>
                         </div>
                     </div>`;
 
   cShoppingCart.innerHTML = view;
 
+  //vacio la canasta
+  let containerCartProducts = cShoppingCart.querySelector(".shoopingCart__products");
+  let emptyCart = cShoppingCart.querySelector(".shoopingCart__emptyCart");
+  emptyCart.addEventListener("click", () => {
+    while (containerCartProducts.hasChildNodes()) {
+      containerCartProducts.removeChild(containerCartProducts.firstChild);
+    }
+  });
+
   //obtengo el boton close, para ocultar-visualizar el carrito
   let buttonClose = cShoppingCart.querySelector(".l-shoopingCart__close");
   buttonClose.addEventListener("click", () => {
+    cShoppingCart.classList.remove("shoopingCart--visible");
+    document.body.style = "";
+  });
+  //obtengo el botón volver me retorna a la página principal
+  let buttonReturn = cShoppingCart.querySelector("#shoopingCartClose");
+  buttonReturn.addEventListener("click", () => {
     cShoppingCart.classList.remove("shoopingCart--visible");
     document.body.style = "";
   });
@@ -46,6 +61,4 @@ const shoopingCart = () => {
 
 export { shoopingCart };
 
-//TODO crear componente del contenedor de productos
-//TODO descargar los iconos que uso
-//TODO agregar cursor pointer en los que necesite
+
