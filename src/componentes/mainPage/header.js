@@ -1,9 +1,9 @@
 //importo el componente buscador
-import {search} from './search.js';
+import { search } from "./search.js";
 
 //componente header de la pagina principal
-const header = ()=>{
-    const view = `<div class="header__left">
+const header = () => {
+  const view = `        <div class="header__left">
                           <div class="header__icon-menu icon"></div>
                           <h2 class="header__logo">Logo</h2>
                         </div>
@@ -59,48 +59,45 @@ const header = ()=>{
                           <div class="header__icon-canasta icon"></div>
                           </div>
     `;
-    //creo el componente
-    const cHeader = document.createElement("header");
-    cHeader.classList.add("header");
-    cHeader.innerHTML = view;
-    
-    //funcionalidad del carrito, desplegar y cerrar
-    let buttonCart = cHeader.querySelector(".header__icon-canasta");
-    buttonCart.addEventListener("click", ()=>{
-      //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
-        let shoopingCart = document.querySelector(".shoopingCart");
-        shoopingCart.classList.add("shoopingCart--visible");
-        document.body.style.overflow = 'hidden';
-    });
+  //creo el componente
+  const cHeader = document.createElement("header");
+  cHeader.classList.add("header");
+  cHeader.innerHTML = view;
 
-    //evento redimensión del tamaño del width del windows
-    window.onresize = ()=>{
-      moveSearch();
-    }
+  //funcionalidad del carrito, desplegar y cerrar
+  let buttonCart = cHeader.querySelector(".header__icon-canasta");
+  buttonCart.addEventListener("click", () => {
+    //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
+    let shoopingCart = document.querySelector(".shoopingCart");
+    shoopingCart.classList.add("shoopingCart--visible");
+    document.body.style.overflow = "hidden";
+  });
 
-    //evento cargar la pagina
-    window.onload = ()=> {
-      moveSearch();
-    }
+  //evento redimensión del tamaño del width del windows
+  window.onresize = () => {
+    moveSearch();
+  };
 
+  //evento cargar la pagina
+  window.onload = () => {
+    moveSearch();
+  };
 
-    return cHeader
-}
+  return cHeader;
+};
 
-export {header}
+export { header };
 
 //función que mueve el buscador según el view
-function moveSearch (){
-  const search = document.querySelector('.c-buscador');
-  const cHeaderRight = document.querySelector('.header__right');
+function moveSearch() {
+  const search = document.querySelector(".c-buscador");
+  const cHeaderRight = document.querySelector(".header__right");
 
-
-    if (window.innerWidth > 650){
-    document.querySelector('header').insertBefore(search,cHeaderRight);
-    search.classList.add('c-buscador--blanco');
-    }
-    else{
-      document.querySelector('header').insertAdjacentElement('afterend',search);
-      search.classList.remove('c-buscador--blanco');
-    };
+  if (window.innerWidth > 650) {
+    document.querySelector("header").insertBefore(search, cHeaderRight);
+    search.classList.add("c-buscador--blanco");
+  } else {
+    document.querySelector("header").insertAdjacentElement("afterend", search);
+    search.classList.remove("c-buscador--blanco");
+  }
 }

@@ -1,27 +1,26 @@
-const search = ()=> {
-    const view = `
+const search = () => {
+  const view = `
     <div class="buscador__icon-lupa"></div>
-    <input type="text" value="" placeholder="Buscar" class="buscador__text">`
+    <input type="text" value="" placeholder="Buscar" class="buscador__text">`;
 
+  const cSearch = document.createElement("div");
+  cSearch.classList.add("c-buscador");
+  cSearch.insertAdjacentHTML("afterbegin", view);
 
-    const cSearch = document.createElement("div")
-    cSearch.classList.add('c-buscador')
-    cSearch.insertAdjacentHTML("afterbegin", view)
+  const buttonSearch = cSearch.querySelector(".buscador__icon-lupa");
+  buttonSearch.addEventListener("click", () => {
+    console.log("buscando");
+  });
 
-    const buttonSearch = cSearch.querySelector('.buscador__icon-lupa');
-    buttonSearch.addEventListener("click", ()=>{console.log('buscando');})
-    
+  return cSearch;
+};
 
-    return (cSearch)
-}
+export { search };
 
-
-export {search}
-
-{/* <div class="c-buscador">
+{
+  /* <div class="c-buscador">
       <div class="buscador__icon-lupa"></div>
       <input type="text" value="" placeholder="Buscar" class="buscador__text">
       
-</div> */}
-
-
+</div> */
+}

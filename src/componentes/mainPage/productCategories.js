@@ -1,41 +1,37 @@
-import {kanu} from "../../database/data.js";
-import {renderProducts} from "./listProducts.js"
+import { kanu } from "../../database/data.js";
+import { renderProducts } from "./listProducts.js";
 
 //creo el componente categorias de productos
-const productCategories = ()=>{
+const productCategories = () => {
+  const categories = document.createElement("section");
+  categories.classList.add("c-carrousel");
 
-    const categories = document.createElement("section")
-    categories.classList.add("c-carrousel")
+  const view = `<div class="c-carrousel__title">Nuestras Categorías</div>
+                  <div class="c-carrousel__items c-scroll"></div>`;
 
-    const view = `<div class="c-carrousel__title">Nuestras Categorías</div>
-                  <div class="c-carrousel__items c-scroll"></div>`
+  categories.insertAdjacentHTML("afterbegin", view);
 
-    categories.insertAdjacentHTML("afterbegin",view)
+  const categoriesCarrousel = categories.querySelector(".c-carrousel__items");
 
-    const categoriesCarrousel = categories.querySelector(".c-carrousel__items")
-    
-    kanu.categories.forEach(categoria=>{
-      let cCategory = document.createElement("div")
-      cCategory.classList.add("c-categoria")
-    
-      const viewCategory = `<img class="c-categoria__img" src="${categoria.imgUrl}" alt="">
-                            <div class="c-categoria__title">${categoria.name}</div>`
-      cCategory.insertAdjacentHTML("afterbegin", viewCategory) 
+  kanu.categories.forEach((categoria) => {
+    let cCategory = document.createElement("div");
+    cCategory.classList.add("c-categoria");
 
-      categoriesCarrousel.appendChild(cCategory)
+    const viewCategory = `<img class="c-categoria__img" src="${categoria.imgUrl}" alt="">
+                            <div class="c-categoria__title">${categoria.name}</div>`;
+    cCategory.insertAdjacentHTML("afterbegin", viewCategory);
 
-      cCategory.addEventListener("click", ()=>{renderProducts(categoria)})
-        
-    })
+    categoriesCarrousel.appendChild(cCategory);
 
+    cCategory.addEventListener("click", () => {
+      renderProducts(categoria);
+    });
+  });
 
-    return categories
-}
+  return categories;
+};
 
-
-export {productCategories}
-
-
+export { productCategories };
 
 /* <section class="c-carrousel">
         <div class="c-carrousel__title">Nuestras Categorías</div>
@@ -52,6 +48,5 @@ export {productCategories}
     <img class="c-categoria__img" src="./assets/categoria__img-purina.png" alt="">
     <div class="c-categoria__title">Alimento seco</div>
 </div>  */
-
 
 //TODO hacer función deslizar

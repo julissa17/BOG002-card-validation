@@ -1,7 +1,6 @@
 //componente pie de pagina de la pagina principal
-const footer = ()=>{
-
-    const view =`   <div class="footer__icons">
+const footer = () => {
+  const view = `   <div class="footer__icons">
                         <div class="footer__icon-whatsapp icon"></div>
                         <div class="footer__icon-instagram icon"></div>
                         <div class="footer__icon-facebook icon"></div>
@@ -12,15 +11,14 @@ const footer = ()=>{
                         <p>Política de tramientos de datos</p>
                     </div>`;
 
-    const cFooter = document.createElement("footer");
-    cFooter.classList.add('footer');
-    cFooter.innerHTML = view;
+  const cFooter = document.createElement("footer");
+  cFooter.classList.add("footer");
+  cFooter.innerHTML = view;
 
-    return cFooter
-}
+  return cFooter;
+};
 
-export{footer}
-
+export { footer };
 
 // <!-- <footer class="footer">
 // <div class="footer__icons">
@@ -33,5 +31,5 @@ export{footer}
 //   <p>Términos y condiciones</p>
 //   <p>Política de tramientos de datos</p>
 // </div>
-// </footer> 
+// </footer>
 // -->
