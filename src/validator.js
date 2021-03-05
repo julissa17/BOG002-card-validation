@@ -5,11 +5,11 @@ const validator = {
 
 
 
-function isValid (numberCard){
+function isValid (creditCardNumber){
    //obtengo el largo del número
-   let lenghtNumberCard = numberCard.length
+   let lenghtNumberCard = creditCardNumber.length
    //hago el reverse del número, split separa el string en un array, reverse lo invierte, join lo une de nuevo en número
-   let reverseNumberCard = numberCard.split('').reverse().join('');
+   let reverseNumberCard = creditCardNumber.split('').reverse().join('');
    let total = 0
 
    for (let position = 0 ; position < lenghtNumberCard; position ++){
@@ -39,7 +39,7 @@ function isValid (numberCard){
 
 
 
-function maskify(numberCard) {
+function maskify(creditCardNumber) {
     var size = creditCardNumber.length;//saco el tamaño total del número de tarjeta
     var newCreditCard = "";
     for(var i = 0; i< size - 4;i++)//declaro el recorrido sin las últimas 4 cifras 

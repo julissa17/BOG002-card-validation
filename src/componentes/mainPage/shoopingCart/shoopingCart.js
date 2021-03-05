@@ -181,7 +181,7 @@ const shoopingCart = () =>{
     let buttonPayment = cShoppingCart.querySelector('#shoopingCartPayment')
 
 
-    buttonPayment.addEventListener('click', ()=> {window.location = './validation.html'})
+    buttonPayment.addEventListener('click', ()=> {window.location = './payPage.html'})
 
 
     return cShoppingCart
