@@ -1,4 +1,5 @@
-import {cartProduct} from './ProductCart.js'
+import { cartProduct } from "./ProductCart.js";
+import { kanu } from "../../../database/data.js";
 
 const shoopingCart = () => {
   //creo el elemento html del carrito
@@ -13,9 +14,7 @@ const shoopingCart = () => {
                         <div class="l-shoopingCart__close icon"></div>
                     </div>
 
-                    <div class="shoopingCart__products c-scroll">
-                    
-                    </div>
+                    <div class="shoopingCart__products c-scroll"></div>
                     
                     <div class="shoopingCart__summary">
                         <div class="l-shoopingCart__total">
@@ -31,7 +30,9 @@ const shoopingCart = () => {
   cShoppingCart.innerHTML = view;
 
   //vacio la canasta
-  let containerCartProducts = cShoppingCart.querySelector(".shoopingCart__products");
+  let containerCartProducts = cShoppingCart.querySelector(
+    ".shoopingCart__products"
+  );
   let emptyCart = cShoppingCart.querySelector(".shoopingCart__emptyCart");
   emptyCart.addEventListener("click", () => {
     while (containerCartProducts.hasChildNodes()) {
@@ -45,6 +46,7 @@ const shoopingCart = () => {
     cShoppingCart.classList.remove("shoopingCart--visible");
     document.body.style = "";
   });
+
   //obtengo el botón volver me retorna a la página principal
   let buttonReturn = cShoppingCart.querySelector("#shoopingCartClose");
   buttonReturn.addEventListener("click", () => {
@@ -60,6 +62,35 @@ const shoopingCart = () => {
   return cShoppingCart;
 };
 
-export { shoopingCart };
+function rendCartProducts() {
+  let containerCartProducts = document.querySelector(".shoopingCart__products");
 
 
+  if (containerCartProducts.hasChildNodes() == true){
+    while(containerCartProducts.hasChildNodes()==true){
+      containerCartProducts.childNodes.forEach(product=>{
+        containerCartProducts.removeChild(product)
+      })}
+
+     kanu.cart.productLists.forEach((Product) => {
+    containerCartProducts.appendChild(cartProduct(Product));
+      });
+  
+
+  }else{
+    console.log('no se que putas pasa');
+    kanu.cart.productLists.forEach((Product) => {
+      containerCartProducts.appendChild(cartProduct(Product));
+    });
+  }
+
+
+  // kanu.cart.productLists.forEach((Product) => {
+  //   containerCartProducts.appendChild(cartProduct(Product));
+  // });
+  
+
+  return containerCartProducts;
+}
+
+export { shoopingCart, rendCartProducts };

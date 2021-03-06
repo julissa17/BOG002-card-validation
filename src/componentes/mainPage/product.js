@@ -1,9 +1,12 @@
 import { kanu } from "../../database/data.js";
 
+//product -> type (product)
 function renderProduct(producto) {
   //creo el elemento html
-  const product = document.createElement("div");
-  product.classList.add("c-Product");
+  const htmlProduct = document.createElement("div");
+  htmlProduct.classList.add("c-Product");
+  htmlProduct.setAttribute("data-id", producto.id);
+
   //le agrego información
   const view = `  
     <div class="c-Product__info">
@@ -18,32 +21,79 @@ function renderProduct(producto) {
           <p class="c-Product__buttonUnitsText"> Und</p>
           <div class=" buttonUnits minus"></div>
       </div>`;
-  product.innerHTML = view;
+  htmlProduct.innerHTML = view;
 
-  let buttonPay = product.querySelector(".c-Product__buttonPay");
-  let buttonQuantity = product.querySelector(".c-Product__buttonUnits--hidden");
-  let buttonQuantityPlus = product.querySelector(".plus");
-  let buttonQuantityMinus = product.querySelector(".minus");
+  //elementos para los botones
+  let buttonPay = htmlProduct.querySelector(".c-Product__buttonPay");
+  let buttonQuantity = htmlProduct.querySelector(
+    ".c-Product__buttonUnits--hidden"
+  );
+
+  //elementos para sumar cantidades
+  let buttonQuantityPlus = htmlProduct.querySelector(".plus");
+  let buttonQuantityMinus = htmlProduct.querySelector(".minus");
 
   buttonPay.addEventListener("click", () => {
-    console.log("selecciono algún producto");
-    buttonPay.classList.toggle("c-Product__buttonPay--hidden");
-    buttonQuantity.classList.toggle("c-Product__buttonUnits--hidden");
     addQuantity(producto);
+    renderButtonProduct(htmlProduct);
   });
 
   buttonQuantityPlus.addEventListener("click", () => {
-    addQuantity(producto, buttonPay, buttonQuantity);
+    addQuantity(producto);
   });
 
   buttonQuantityMinus.addEventListener("click", () => {
     minusQuantity(producto);
   });
 
-  return product;
+  return htmlProduct;
 }
 
-export { renderProduct };
+//product -> type (product)
+function addQuantity(product) {
+  //return -> type (productCart)
+  const productCart = kanu.cart.addProductToCart(product);
+  //HTMLProduct => HTML-CONTAINER-PRODUCTS
+  const htmlProduct = document.querySelector([`div[data-id="${product.id}"]`]);
+  //HTMLCardProduct => html-container card products
+  const htmlCardProduct = document.querySelector([`div[data-idCart="${product.id}"]`])
+
+  if (htmlProduct) {
+    htmlProduct.querySelector( ".c-Product__buttonUnitsText").textContent = `${productCart.units} Und.`;
+  }
+
+  if(htmlCardProduct){
+    htmlCardProduct.querySelector('.shoopingCartProduct__quantity').textContent = `${productCart.units} Und.`
+  }
+}
+
+//product -> type (product)
+function minusQuantity(product) {
+  const productCart = kanu.cart.removeProductToCart(product);
+
+  const htmlProduct = document.querySelector([`div[data-id="${product.id}"]`]);
+  const htmlCardProduct = document.querySelector([`div[data-idCart = "${product.id}"]`])
+
+  //match productCart in l-container-cart-product
+  if (productCart.units == 0) {
+    //matchProductInProducts -- > debe cambiar a el otro boton
+    renderButtonProduct(htmlProduct);
+    //matchProductInCart      --> se debe eliminar
+
+  } else {
+    //matchProductInProducts    --> debe aumental la unidad
+    htmlProduct.querySelector(".c-Product__buttonUnitsText").textContent = `${productCart.units} Und.`;
+    //matchProductInCart        --> debe aumentar la unidad
+    htmlCardProduct.querySelector('.shoopingCartProduct__quantity').textContent = `${productCart.units} Und.`
+    
+  }
+}
+
+
+
+
+
+export { renderProduct, addQuantity, minusQuantity };
 
 {
   /* <div class="c-Product">
@@ -69,38 +119,12 @@ export { renderProduct };
    </div> */
 }
 
-//product -> type (product)
-function addQuantity(product) {
-  //return -> type (productCart)
-  const productCart = kanu.cart.addProductToCart(product);
 
-  // encontrar
-  //product => productos de categorias
-  // productCart => cart
 
-  // aumentar sus unidades en
+function renderButtonProduct(htmlProduct) {
+  let buttonPay = htmlProduct.querySelector(".c-Product__buttonPay");
+  let buttonQuantity = htmlProduct.querySelector(".c-Product__buttonUnits");
 
-  //actualizarlo
-  console.log(kanu.cart);
-}
-
-//aplica para
-function minusQuantity(product) {
-  const productCart = kanu.cart.removeProductToCart(product);
-
-  //match by data-id
-
-  //match product in l-container-products
-
-  //match productCart in l-container-cart-product
-  if (productCart.units == 0) {
-    //matchProductInProducts -- > debe cambiar a el otro boton
-    //matchProductInCart      --> se debe eliminar
-  } else {
-    //matchProductInProducts    --> debe aumental la unidad
-    //matchProductInCart        --> debe aumentar la unidad
-  }
-
-  //actualizarlo visualmente
-  console.log(kanu.cart);
+  buttonPay.classList.toggle("c-Product__buttonPay--hidden");
+  buttonQuantity.classList.toggle("c-Product__buttonUnits--hidden");
 }

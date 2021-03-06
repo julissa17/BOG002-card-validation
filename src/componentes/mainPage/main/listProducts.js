@@ -10,7 +10,7 @@ function listProducts() {
                   <div class="productos__container"></div>`;
 
   cProducts.insertAdjacentHTML("afterbegin", view);
-
+  //renderizo la primera categoria de productos por defecto
   renderProducts(
     kanu.categories[0],
     cProducts.querySelector(".productos__container")
@@ -20,8 +20,8 @@ function listProducts() {
 }
 
 function renderProducts(categoria, products) {
-  //eliminar los que ya existan
 
+  //eliminar los que ya existan
   let containerProduct =
     typeof products == "object"
       ? products

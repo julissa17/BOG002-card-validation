@@ -1,5 +1,4 @@
-//importo el componente buscador
-import { search } from "./search.js";
+import{rendCartProducts} from './shoopingCart/shoopingCart.js'
 
 //componente header de la pagina principal
 const header = () => {
@@ -70,7 +69,11 @@ const header = () => {
     //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
     let shoopingCart = document.querySelector(".shoopingCart");
     shoopingCart.classList.add("shoopingCart--visible");
-    document.body.style.overflow = "hidden";
+
+    //FIXME debo eliminar este comentario
+    // document.body.style.overflow = "hidden";
+    //renderizo los productos del carrito
+    rendCartProducts()
   });
 
   //evento redimensión del tamaño del width del windows

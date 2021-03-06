@@ -11,6 +11,7 @@ const productCategories = () => {
 
   categories.insertAdjacentHTML("afterbegin", view);
 
+  //inyecto los productos dentro de las categorias con base a la data de información
   const categoriesCarrousel = categories.querySelector(".c-carrousel__items");
 
   kanu.categories.forEach((categoria) => {

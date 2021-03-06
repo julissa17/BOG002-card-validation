@@ -13,6 +13,7 @@ class Product {
       (this.stock = stock),
       (this.numberSale = numeroVentas || 0);
   }
+
 }
 
 //objeto categoria
@@ -28,8 +29,7 @@ class ProductCart {
     this.id = id;
     this.name = nombre;
     this.imgUrl = img;
-    this.price = precio, 
-    this.units = unidades;
+    (this.price = precio), (this.units = unidades);
     this.totalValue = 0;
   }
 }
@@ -37,8 +37,7 @@ class ProductCart {
 //objeto tienda, contiene toda la información y funciones
 class Store {
   constructor() {
-    this.categories = [],
-    this.lastId = 1;
+    (this.categories = []), (this.lastId = 1);
     this.cart = new ShoppingCart();
   }
 
@@ -73,14 +72,14 @@ class Store {
     this.lastId++;
   }
 
+
 }
 
 //aumento una unidad 1 * 2000 = 2000
 
 class ShoppingCart {
   constructor() {
-    this.productLists = [],
-    this.shipping = 0;
+    (this.productLists = []), (this.shipping = 0);
   }
 
   //producto -> type (product)
@@ -90,8 +89,8 @@ class ShoppingCart {
 
     if (matchProductCart) {
       matchProductCart.units++;
-      matchProductCart.totalValue =
-        matchProductCart.units * matchProductCart.price;
+      matchProductCart.totalValue = matchProductCart.units * matchProductCart.price;
+      return matchProductCart;
     } else {
       //newproduct -> type (productCart)
       let newProductCart = new ProductCart(
@@ -101,11 +100,12 @@ class ShoppingCart {
         producto.price,
         1
       );
-      newProductCart.totalValue = newProductCart.units + newProductCart.price;
+      newProductCart.totalValue = newProductCart.units * newProductCart.price;
       this.productLists.push(newProductCart);
+      return newProductCart
     }
 
-    return matchProductCart;
+
   }
 
   //product -> type(product)
@@ -319,4 +319,4 @@ kanu.categories.forEach((categoria) => {
   bestProducts.push({ categoria: categoria.name, producto: largerProduct });
 });
 
-export { kanu, bestProducts };
+export { kanu, bestProducts, ShoppingCart };

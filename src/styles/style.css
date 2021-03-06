@@ -91,6 +91,7 @@ html{
   background-color: var(--green-main);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 .buttonUnits:hover{
   background-color: var(--green-second);
