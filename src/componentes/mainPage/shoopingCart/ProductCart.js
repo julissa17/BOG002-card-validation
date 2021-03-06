@@ -19,9 +19,19 @@ const cartProduct = () => {
                             </div>
                             <div class="shoopingCartProduct__totalValue">$1.990</div>
                         </div>
-                    </div>
-    `;
+                    </div>`;
+
+    shoopingCartProduct.insertAdjacentHTML('afterbegin',view)
+
+    return shoopingCartProduct
 };
+
+export{cartProduct}
+
+
+
+
+
 
 {/* <div class="shoopingCartProduct">
   <div class="shoopingCartProduct__remove icon"></div>

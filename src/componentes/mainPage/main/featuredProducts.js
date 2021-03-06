@@ -1,4 +1,4 @@
-import { bestProducts } from "../../database/data.js";
+import { bestProducts } from "../../../database/data.js";
 
 //componente categoria de productos más vendidos
 const featuredProducts = () => {

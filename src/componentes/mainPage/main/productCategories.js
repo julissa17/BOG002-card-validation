@@ -1,4 +1,4 @@
-import { kanu } from "../../database/data.js";
+import { kanu } from "../../../database/data.js";
 import { renderProducts } from "./listProducts.js";
 
 //creo el componente categorias de productos

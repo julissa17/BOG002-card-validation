@@ -28,7 +28,8 @@ class ProductCart {
     this.id = id;
     this.name = nombre;
     this.imgUrl = img;
-    (this.price = precio), (this.units = unidades);
+    this.price = precio, 
+    this.units = unidades;
     this.totalValue = 0;
   }
 }
@@ -36,7 +37,8 @@ class ProductCart {
 //objeto tienda, contiene toda la información y funciones
 class Store {
   constructor() {
-    (this.categories = []), (this.lastId = 1);
+    this.categories = [],
+    this.lastId = 1;
     this.cart = new ShoppingCart();
   }
 
@@ -71,16 +73,14 @@ class Store {
     this.lastId++;
   }
 
-  //remover
-
-  //find
 }
 
 //aumento una unidad 1 * 2000 = 2000
 
 class ShoppingCart {
   constructor() {
-    (this.productLists = []), (this.shipping = 0);
+    this.productLists = [],
+    this.shipping = 0;
   }
 
   //producto -> type (product)

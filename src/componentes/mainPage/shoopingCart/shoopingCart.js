@@ -1,3 +1,5 @@
+import {cartProduct} from './ProductCart.js'
+
 const shoopingCart = () => {
   //creo el elemento html del carrito
   const cShoppingCart = document.createElement("div");
@@ -55,7 +57,6 @@ const shoopingCart = () => {
   buttonPayment.addEventListener("click", () => {
     window.location = "./payPage.html";
   });
-
   return cShoppingCart;
 };
 

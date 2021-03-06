@@ -1,5 +1,5 @@
-import { kanu } from "../../database/data.js";
-import { renderProduct } from "./product.js";
+import { kanu } from "../../../database/data.js";
+import { renderProduct } from "../product.js";
 
 // creo el contenedor productos
 function listProducts() {
