@@ -1,5 +1,6 @@
 import { cartProduct } from "./ProductCart.js";
 import { kanu } from "../../../database/data.js";
+import {minusQuantity} from "../product.js"
 
 const shoopingCart = () => {
   //creo el elemento html del carrito
@@ -30,15 +31,36 @@ const shoopingCart = () => {
   cShoppingCart.innerHTML = view;
 
   //vacio la canasta
-  let containerCartProducts = cShoppingCart.querySelector(
-    ".shoopingCart__products"
-  );
+  let containerCartProducts = cShoppingCart.querySelector(".shoopingCart__products");
   let emptyCart = cShoppingCart.querySelector(".shoopingCart__emptyCart");
+
+
   emptyCart.addEventListener("click", () => {
-    while (containerCartProducts.hasChildNodes()) {
-      containerCartProducts.removeChild(containerCartProducts.firstChild);
+
+
+      //debo recorrer el carrito y restarle a todos todas sus cantidades
+      // while(kanu.cart.productLists.length > 0){
+      //   const cartProduct = kanu.cart.productLists[0]
+      //   minusQuantity(cartProduct.id,c
+    let datosRemove = []
+    
+    for (let element of kanu.cart.productLists){
+      datosRemove.push([element.id,element.units]);
     }
+
+     
+    datosRemove.forEach(posicion =>{
+      minusQuantity(posicion[0], posicion[1])
+    })
+
+    
+  
+
+
+
   });
+
+  
 
   //obtengo el boton close, para ocultar-visualizar el carrito
   let buttonClose = cShoppingCart.querySelector(".l-shoopingCart__close");
@@ -78,7 +100,6 @@ function rendCartProducts() {
   
 
   }else{
-    console.log('no se que putas pasa');
     kanu.cart.productLists.forEach((Product) => {
       containerCartProducts.appendChild(cartProduct(Product));
     });

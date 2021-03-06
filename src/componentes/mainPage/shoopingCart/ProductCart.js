@@ -1,7 +1,6 @@
 import { addQuantity, minusQuantity } from "../product.js";
-import { kanu } from "../../../database/data.js";
 
-//product => cardProduct
+//product => cartProduct
 const cartProduct = (product) => {
   const shoopingCartProduct = document.createElement("div");
   shoopingCartProduct.classList.add("shoopingCartProduct");
@@ -31,7 +30,10 @@ const cartProduct = (product) => {
   //remuevo el elemento con la x
   let buttonRemove = shoopingCartProduct.querySelector(".shoopingCartProduct__remove");
   buttonRemove.addEventListener("click", () => {
+    //visualmente
     shoopingCartProduct.remove();
+    //remover el producto dentro de la base de datos
+    minusQuantity(product.id,product.units)
   });
 
   //añado unidades
@@ -40,10 +42,11 @@ const cartProduct = (product) => {
     addQuantity(product);
     shoopingCartProduct.querySelector('.shoopingCartProduct__totalValue').textContent = `$${product.totalValue}`
   });
+
   //elimino unidades
   let buttonUnitsMinus = shoopingCartProduct.querySelector(".shoopingCartProduct__minus");
   buttonUnitsMinus.addEventListener("click", () => {
-    minusQuantity(product)
+    minusQuantity(product.id)
     shoopingCartProduct.querySelector('.shoopingCartProduct__totalValue').textContent = `$${product.totalValue}`
   });
 

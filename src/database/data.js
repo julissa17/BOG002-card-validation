@@ -109,10 +109,10 @@ class ShoppingCart {
   }
 
   //product -> type(product)
-  removeProductToCart(producto) {
-    let productCartMatch = this.findProductToCart(producto.id);
+  removeProductToCart(productId,quantity = 1) {
+    let productCartMatch = this.findProductToCart(productId);
 
-    const simulacion = productCartMatch.units - 1;
+    const simulacion = productCartMatch.units - quantity;
 
     if (simulacion == 0) {
       let position = this.productLists.indexOf(productCartMatch);

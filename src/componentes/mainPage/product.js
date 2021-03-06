@@ -1,4 +1,5 @@
 import { kanu } from "../../database/data.js";
+import {moveShoppingCart} from './header.js';
 
 //product -> type (product)
 function renderProduct(producto) {
@@ -23,27 +24,24 @@ function renderProduct(producto) {
       </div>`;
   htmlProduct.innerHTML = view;
 
-  //elementos para los botones
+  //captación de los botones 
   let buttonPay = htmlProduct.querySelector(".c-Product__buttonPay");
-  let buttonQuantity = htmlProduct.querySelector(
-    ".c-Product__buttonUnits--hidden"
-  );
+  buttonPay.addEventListener("click", () => {
+    addQuantity(producto);
+    renderButtonProduct(htmlProduct);
+    moveShoppingCart()
+  });
 
   //elementos para sumar cantidades
   let buttonQuantityPlus = htmlProduct.querySelector(".plus");
   let buttonQuantityMinus = htmlProduct.querySelector(".minus");
-
-  buttonPay.addEventListener("click", () => {
-    addQuantity(producto);
-    renderButtonProduct(htmlProduct);
-  });
 
   buttonQuantityPlus.addEventListener("click", () => {
     addQuantity(producto);
   });
 
   buttonQuantityMinus.addEventListener("click", () => {
-    minusQuantity(producto);
+    minusQuantity(producto.id);
   });
 
   return htmlProduct;
@@ -67,18 +65,24 @@ function addQuantity(product) {
   }
 }
 
-//product -> type (product)
-function minusQuantity(product) {
-  const productCart = kanu.cart.removeProductToCart(product);
 
-  const htmlProduct = document.querySelector([`div[data-id="${product.id}"]`]);
-  const htmlCardProduct = document.querySelector([`div[data-idCart = "${product.id}"]`])
+
+//product -> type (product)
+function minusQuantity(productId,quantity=1) {
+
+  //que requiero para eliminar el producto el carrito -> ID
+  const productCart = kanu.cart.removeProductToCart(productId,quantity);
+
+  //renderizar el producto 
+  const htmlProduct = document.querySelector([`div[data-id="${productCart.id}"]`]);
+  const htmlCardProduct = document.querySelector([`div[data-idCart = "${productCart.id}"]`])
 
   //match productCart in l-container-cart-product
   if (productCart.units == 0) {
     //matchProductInProducts -- > debe cambiar a el otro boton
     renderButtonProduct(htmlProduct);
     //matchProductInCart      --> se debe eliminar
+    htmlCardProduct.remove()
 
   } else {
     //matchProductInProducts    --> debe aumental la unidad
@@ -91,36 +95,6 @@ function minusQuantity(product) {
 
 
 
-
-
-export { renderProduct, addQuantity, minusQuantity };
-
-{
-  /* <div class="c-Product">
-      <div class="c-Product__info">
-        <img class="c-Product__img" src="./assets/monello.jpg" alt="">
-        <div class="c-Product__name">Alimento para perro Monello x 1.5 Kg</div>
-        <div class="c-Product__price">$2.650</div>
-      </div>
-      <div class="c-Product__button c-button">PAGAR</div>
-</div>  */
-}
-
-{
-  /* <div class="c-Product__buttonUnits">
-      
-      <div class="buttonUnits plus">
-      </div>
-
-      <p class="c-Product__buttonUnitsText">1 Und</p>
-
-      <div class=" buttonUnits minus"></div>
-
-   </div> */
-}
-
-
-
 function renderButtonProduct(htmlProduct) {
   let buttonPay = htmlProduct.querySelector(".c-Product__buttonPay");
   let buttonQuantity = htmlProduct.querySelector(".c-Product__buttonUnits");
@@ -128,3 +102,8 @@ function renderButtonProduct(htmlProduct) {
   buttonPay.classList.toggle("c-Product__buttonPay--hidden");
   buttonQuantity.classList.toggle("c-Product__buttonUnits--hidden");
 }
+
+
+
+
+export { renderProduct, addQuantity, minusQuantity ,renderButtonProduct};

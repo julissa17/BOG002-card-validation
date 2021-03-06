@@ -66,14 +66,11 @@ const header = () => {
   //funcionalidad del carrito, desplegar y cerrar
   let buttonCart = cHeader.querySelector(".header__icon-canasta");
   buttonCart.addEventListener("click", () => {
-    //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
-    let shoopingCart = document.querySelector(".shoopingCart");
-    shoopingCart.classList.add("shoopingCart--visible");
+    // //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
+    moveShoppingCart()
 
     //FIXME debo eliminar este comentario
-    // document.body.style.overflow = "hidden";
-    //renderizo los productos del carrito
-    rendCartProducts()
+    // document.body.style.overflow = "hidden";   
   });
 
   //evento redimensión del tamaño del width del windows
@@ -89,7 +86,13 @@ const header = () => {
   return cHeader;
 };
 
-export { header };
+function moveShoppingCart(){
+  let shoopingCart = document.querySelector(".shoopingCart");
+  shoopingCart.classList.add("shoopingCart--visible");
+  rendCartProducts()
+}
+
+export { header, moveShoppingCart };
 
 //función que mueve el buscador según el view
 function moveSearch() {
@@ -104,3 +107,4 @@ function moveSearch() {
     search.classList.remove("c-buscador--blanco");
   }
 }
+//hago visible el carrito y renderizo los productos
