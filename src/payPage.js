@@ -1,8 +1,8 @@
 import validator from './validator.js';
 
+// callback -> llamada devuelta (funcion)
+const rejectModal =(message,typeError,callback)=>{
 
-const rejectModal =(message,typeError)=>{
-    
     let imgUrl = ' ';
     switch (typeError) {
         case 'Error':
@@ -27,15 +27,25 @@ const rejectModal =(message,typeError)=>{
     htmlModal.innerHTML = view
 
     let buttonBack = htmlModal.querySelector('.modal__button')
+
+    //quito el evento de escribir, presionar tecla
+    document.onkeydown = (e) => {
+        e.preventDefault()
+    }
+
     buttonBack.addEventListener("click", ()=>{
+        document.onkeydown = ""
         htmlModal.remove()
+
+        //permanente de una llama devuelta
+        callback()
+
     })
 
 
     return htmlModal
 }
 
-  
   
 //get the form
 let form = document.querySelector('.c-formulario');
@@ -68,26 +78,24 @@ inputCardNumber.addEventListener('input',(event)=>{
 form.addEventListener('submit',(evt)=>{
     evt.preventDefault()
 
-    console.log(creditCardNumber);
     // evalua si el valor corresponde a un número de tarjeta o no
     if(validator.isValid(creditCardNumber) == false){
-        form.insertAdjacentElement ('afterend',rejectModal('El número de la tarjeta no se ha validado, por favor ingrese nuevamente el dato','Error'))
+        form.insertAdjacentElement ('afterend',rejectModal('El número de la tarjeta no se ha validado, por favor ingrese nuevamente el dato','Error',()=>{
+            document.getElementById('cardNumber').value = ""
+            document.getElementById('cardNumber').focus()
+        }))
+        
+
     }else{
         form.insertAdjacentElement('afterend', rejectModal('Tu tarjeta ha sido validada con éxito','Accept'))
+        // reseteo el formulario
         form.reset()
     };
-    // reseteo el formulario
+
+    creditCardNumber = "";
     
-    creditCardNumber = ""
+    
 })
-
-
-
-
-
-
-
-
 
 
 

@@ -79,11 +79,14 @@ function rendCartProducts() {
 
   // si el container tiene productos se borran y se agregan nuevamente, sino se agregan
   if (containerCartProducts.hasChildNodes() == true){
-    while(containerCartProducts.hasChildNodes()==true){
-      containerCartProducts.childNodes.forEach(product=>{
-        containerCartProducts.removeChild(product)
-      })}
 
+    //puedo usar este modo para borrar todos sus hijos o el inner
+    // while(containerCartProducts.hasChildNodes()==true){
+    //   containerCartProducts.childNodes.forEach(product=>{
+    //     containerCartProducts.removeChild(product)
+    //   })}
+    containerCartProducts.innerHTML = ''
+    
      kanu.cart.productLists.forEach((Product) => {
     containerCartProducts.appendChild(cartProduct(Product));
       });
