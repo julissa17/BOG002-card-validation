@@ -43,6 +43,7 @@ const rejectModal =(message,typeError,callback)=>{
     })
 
 
+
     return htmlModal
 }
 
@@ -53,6 +54,8 @@ let form = document.querySelector('.c-formulario');
 let inputCardNumber = document.querySelector('#cardNumber');
 //credit card number
 let creditCardNumber = "";
+// botton para regresar al menu
+let buttonBackMain = document.querySelector('.c-button--back')
 
 
 //stop the event of pasting information into the form
@@ -95,6 +98,10 @@ form.addEventListener('submit',(evt)=>{
     creditCardNumber = "";
     
     
+})
+
+buttonBackMain.addEventListener('click', ()=>{
+    window.location ="./index.html"
 })
 
 
