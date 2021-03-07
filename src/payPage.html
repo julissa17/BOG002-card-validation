@@ -12,7 +12,6 @@
     <header class="header">
 
         <div class="header__left">
-          <div class="header__icon-menu icon"></div>
           <h2 class="header__logo">Logo</h2>
         </div>
 
@@ -64,7 +63,6 @@
               </svg>
           </div>
 
-          <div class="header__icon-canasta icon"></div>
         </div> 
     </header>
 
@@ -84,7 +82,7 @@
 
                 <div class="formulario__input">
                     <label for="identification">N° de identificación:</label>
-                    <input type="text" id="identification" name="identification" pattern="[0-9]{6,11}" title=" Ej: solo digitos [0-9] '1121933347'" required>
+                    <input type="text" id="identification" name="identification" pattern="[0-9]{6,11}" maxlength="11" title=" Ej: solo digitos [0-9] '1121933347'" required>
                 </div>
     
                 <div class="formulario__input">
@@ -160,10 +158,11 @@
         </section>
             
             
-        <button type="submit" class="c-button c-button--pay">Pagar</button>
+        <button type="submit" class="c-button c-button--pay">Pagar</button>          
 
     </form>
 
+    
     <script src="payPage.js" type="module"></script>
 </body>
 </html>
