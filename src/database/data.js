@@ -306,17 +306,19 @@ kanu.addCategory("juguetes", "./assets/Categorias/categoria__img-juguetes.jpg");
 //quiero obtener el producto de cada categoría que tenga el mayor número de unidades vendidas
 let bestProducts = [];
 
+//recorro cada categoria, obtengo la lista de los productos
 kanu.categories.forEach((categoria) => {
+  //obtengo la lista de productos
   let listaProductos = categoria.listProducts;
-
-  let largerProduct = listaProductos[0];
-
+  //capturo el primer elemento dentro de la lista
+  let firstProductList = listaProductos[0];
+  
   listaProductos.forEach((product) => {
-    largerProduct =
-      product.numberSale > largerProduct.numberSale ? product : largerProduct;
+    //comparo la cantidad de unidades vendidas del primer elemento y siempre guardo el mayor
+    firstProductList = product.numberSale > firstProductList.numberSale ? product : firstProductList;
   });
-
-  bestProducts.push({ categoria: categoria.name, producto: largerProduct });
+  //ingreso dentro de los mejores productos la categoria, y el producto con mayor ventas
+  bestProducts.push({ categoria: categoria.name, producto: firstProductList });
 });
 
 export { kanu, bestProducts, ShoppingCart };

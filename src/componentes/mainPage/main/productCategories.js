@@ -12,18 +12,20 @@ const productCategories = () => {
   categories.insertAdjacentHTML("afterbegin", view);
 
   //inyecto los productos dentro de las categorias con base a la data de información
+  //obtengo el elemento donde voy a inyectar las categorias
   const categoriesCarrousel = categories.querySelector(".c-carrousel__items");
 
   kanu.categories.forEach((categoria) => {
+    //creo el componente para renderizar las categorias
     let cCategory = document.createElement("div");
     cCategory.classList.add("c-categoria");
 
     const viewCategory = `<img class="c-categoria__img" src="${categoria.imgUrl}" alt="">
                             <div class="c-categoria__title">${categoria.name}</div>`;
     cCategory.insertAdjacentHTML("afterbegin", viewCategory);
-
+    //añado cada categoria
     categoriesCarrousel.appendChild(cCategory);
-
+    //les añado la función de renderizar sus productos
     cCategory.addEventListener("click", () => {
       renderProducts(categoria);
     });

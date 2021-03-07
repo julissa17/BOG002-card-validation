@@ -40,14 +40,12 @@ const cartProduct = (product) => {
   let buttonUnitsPlus = shoopingCartProduct.querySelector(".shoopingCartProduct__plus");
   buttonUnitsPlus.addEventListener("click", () => {
     addQuantity(product);
-    shoopingCartProduct.querySelector('.shoopingCartProduct__totalValue').textContent = `$${product.totalValue}`
   });
 
   //elimino unidades
   let buttonUnitsMinus = shoopingCartProduct.querySelector(".shoopingCartProduct__minus");
   buttonUnitsMinus.addEventListener("click", () => {
     minusQuantity(product.id)
-    shoopingCartProduct.querySelector('.shoopingCartProduct__totalValue').textContent = `$${product.totalValue}`
   });
 
   return shoopingCartProduct;

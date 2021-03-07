@@ -68,9 +68,6 @@ const header = () => {
   buttonCart.addEventListener("click", () => {
     // //obtiene el carrito de compras, agrega la clase visible y esconde el excedente del body
     moveShoppingCart()
-
-    //FIXME debo eliminar este comentario
-    // document.body.style.overflow = "hidden";   
   });
 
   //evento redimensión del tamaño del width del windows
@@ -86,6 +83,7 @@ const header = () => {
   return cHeader;
 };
 
+//hago visible el carrito y renderizo los productos
 function moveShoppingCart(){
   let shoopingCart = document.querySelector(".shoopingCart");
   shoopingCart.classList.add("shoopingCart--visible");
@@ -99,6 +97,7 @@ function moveSearch() {
   const search = document.querySelector(".c-buscador");
   const cHeaderRight = document.querySelector(".header__right");
 
+  //evalua si el tamaño del view es mayor de 650px, si inserta el buscador dentro de header
   if (window.innerWidth > 650) {
     document.querySelector("header").insertBefore(search, cHeaderRight);
     search.classList.add("c-buscador--blanco");
@@ -107,4 +106,4 @@ function moveSearch() {
     search.classList.remove("c-buscador--blanco");
   }
 }
-//hago visible el carrito y renderizo los productos
+

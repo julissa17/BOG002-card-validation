@@ -20,21 +20,18 @@ const shoopingCart = () => {
                     <div class="shoopingCart__summary">
                         <div class="l-shoopingCart__total">
                             <p class="shoopingCart__summaryTitle">Total de compra:</p>
-                            <p id="shoopingCartTotalValue" class="shoopingCart__summaryValue">$ 0000</p>
+                            <p id="shoopingCartTotalValue" class="shoopingCart__summaryValue">$</p>
                         </div>
                         <div class="shoopingCart__buttons">
                             <div id="shoopingCartPayment" class="c-button buttonCart">FINALIZAR</div>
                             <div id="shoopingCartClose" class="c-button c-button--blue buttonCart">VOLVER</div>
                         </div>
                     </div>`;
-
   cShoppingCart.innerHTML = view;
+  
 
-  //vacio la canasta
-  let containerCartProducts = cShoppingCart.querySelector(".shoopingCart__products");
+  //vacio el carrito
   let emptyCart = cShoppingCart.querySelector(".shoopingCart__emptyCart");
-
-
   emptyCart.addEventListener("click", () => {
 
 
@@ -48,20 +45,13 @@ const shoopingCart = () => {
       datosRemove.push([element.id,element.units]);
     }
 
-     
     datosRemove.forEach(posicion =>{
       minusQuantity(posicion[0], posicion[1])
     })
 
-    
-  
-
-
-
   });
 
   
-
   //obtengo el boton close, para ocultar-visualizar el carrito
   let buttonClose = cShoppingCart.querySelector(".l-shoopingCart__close");
   buttonClose.addEventListener("click", () => {
@@ -87,7 +77,7 @@ const shoopingCart = () => {
 function rendCartProducts() {
   let containerCartProducts = document.querySelector(".shoopingCart__products");
 
-
+  // si el container tiene productos se borran y se agregan nuevamente, sino se agregan
   if (containerCartProducts.hasChildNodes() == true){
     while(containerCartProducts.hasChildNodes()==true){
       containerCartProducts.childNodes.forEach(product=>{
@@ -105,13 +95,13 @@ function rendCartProducts() {
     });
   }
 
-
-  // kanu.cart.productLists.forEach((Product) => {
-  //   containerCartProducts.appendChild(cartProduct(Product));
-  // });
-  
-
   return containerCartProducts;
 }
 
-export { shoopingCart, rendCartProducts };
+function renderTotalValue(){
+    let totalValue = document.querySelector(".shoopingCart__summaryValue")
+    totalValue.textContent = `$ ${kanu.cart.total()}`
+  
+}
+
+export { shoopingCart, rendCartProducts, renderTotalValue };
