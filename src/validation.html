@@ -66,22 +66,14 @@
 
           <div class="header__icon-canasta icon"></div>
         </div> 
-    </header>
-<!-- 
-    <main class="forms">
-        
-    </main>
- -->
-
-
+    </header> 
+    
     <!-- UN UNICO FORMULARIO PARA TODOS, AUNQUE CADA UNO SEA UNA SECTION INDEPENDIENTE -->
     
-    <form action="">
+    <form class="c-formulario">
         <section id="formulario_contacto" class="formulario" >
             <h2 class="formulario__title">Información de contacto</h2>
             
-            <!-- <form class="formulario__datos"> -->
-    
                 <div class="formulario__input">
                     <label for="name">Nombre(s) y apellido(s):</label>
                     <input type="text" id="name" name="name" required>
@@ -96,8 +88,7 @@
                     <label for="mail">Correo electrónico</label>
                     <input type="email" id="mail" name="mail" required>
                 </div>   
-                   
-            <!-- </form> -->
+                              
         </section>
 
         <section id="formulario_envio" class="formulario" >
@@ -111,43 +102,61 @@
                 <div class="metodoEntrega">
     
                     <div class="formulario__checkbox">
-                        <label> Entrega a domicilio
-                            <input type="radio" checked="checked" name="radio">
+                        <label> 
+                            <input type="checkbox"  name="checkbox" class="option"> Entrega a domicilio
                         </label>
                     </div>
     
                     <div class="formulario__checkbox">
-                        <label>Recoger en tienda
-                            <input type="radio" name="radio">
+                        <label>
+                            <input type="checkbox"  name="checkbox" class="option"> Recoger en tienda
                         </label>
-                    </div>
-                    
-                    
+                    </div>              
                 </div>
             </div>
                 
-            <!-- <form class="formulario__datos"> -->
-                
-                <div class="formulario__input">
+         
+            <div class="formulario__input">
                     <label for="address">Dirección:</label>
                     <input type="text" id="address" required>
-                </div>
-                <div class="formulario__input">
+            </div>
+            
+            <div class="formulario__input">
                     <label for="city">Ciudad/municipio:</label>
                     <input type="text" id="city" required>
-                </div>
-                <div class="formulario__input">
+            </div>
+                
+            <div class="formulario__input">
                     <label for="state">Departamento</label>
                     <input type="text" id="state" required >
-                </div>   
+            </div>   
                 
-            <!-- </form> -->
-    
         </section>
 
         <section id="formulario_card" class="formulario" >
         
-            <h2 class="formulario__title">Información de pago</h2>       
+            <h2 class="formulario__title">Información de pago</h2> 
+            
+    
+            <div class="metodoPago">
+            <h2>Método de pago</h2>
+                <div class="formulario__radio">
+                    <label> 
+                        <input type="radio" name="radio" checked="checked"> Tarjeta débito
+                    </label>
+                </div>
+
+                <div class="formulario__radio">
+                    <label>
+                        <input type="radio" name="radio"> Tarjeta crédito
+                    </label>
+                </div>
+                <div class="formulario__radio">
+                    <label>
+                        <input type="radio" name="radio"> Otra
+                    </label>
+                </div>              
+            </div>      
                 
                 <div class="formulario__input">
                     <i class="fas fa-credit-card icon"></i>
@@ -167,49 +176,11 @@
             
         <!-- <input style="border: none; outline: none;  width: 300px; margin: auto;margin-top: 20px;" class="c-button" type="submit" value="Realizar Pago"> -->
             
-        <button class="c-button">enviar</button>
-
+        <button class="c-button c-button--pay">Realizar pago</button>
+        
     </form>
 
-
-
-
-
-
-
-<!-- 
-    
-
-
-   
-    <div id="formulario_medio_pago" class="formulario">
-        <h1>Método de pago</h1>
-        <form class="medio_pago">
-            <input type="radio">Tarjeta débito <br>
-            <input type="radio">Tarjeta crédito <br>
-            <input type="radio">Otros medios
-        </form>
-    </div>
-    <div id="formulario_validacion" class="formulario">
-        <h1>Validación tarjeta</h1>
-        <form>
-            <label for="name">Nombre titular:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label >N° de tarjeta</label><br>
-            <input type="number" id="card" maxlength="16"/><br>
-            <label for="date">Fecha de expiración</label><br>
-            <div style=" display: flex; flex-direction: column;justify-content: center; ;">
-            <input type="datetime" id="año" maxlength="4" placeholder="aaaa" >
-            <input type="datetime" id="mes" maxlength="2" placeholder="mm" >
-            <input type="number" id="CVV" maxlength="3" placeholder="CVV" >
-            </div>
-            
-        </form>
-        <div class="c-Product__button c-button" style="margin: 4px;">PAGAR</div>
-    </div>
-     -->
-
-
+    <script src="pago.js" type="module"></script>
 </body>
 </html>
 

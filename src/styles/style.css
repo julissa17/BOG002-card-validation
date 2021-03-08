@@ -297,7 +297,7 @@ html{
 /* diseño del contenedor metodo de entrega */
 .metodoEntrega {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     background-color: rgb(238, 238, 217);
     padding: 10px;
@@ -316,7 +316,61 @@ html{
     .formulario__checkbox > label{
         font-size: 1.4rem;
         font-weight: 400;
+        
     }
     .formulario__checkbox input {
         margin-left: 10px;
+        border-radius: none;
+        
+        
     }
+    
+@media (max-width:320px){
+  .metodoEntrega {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(238, 238, 217);
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        width: 100%;
+    }
+}
+.metodoPago {
+  display: inline-block;
+  background-color: rgb(238, 238, 217);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+/* @media (min-width: 1000px){
+  #formulario__card{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .metodoPago{
+    width: 50%;
+  }
+  #formulario_card .formulario__input{
+    width: 50%;
+  }
+} */
+.formulario__radio{
+  
+  width: 80%;
+ 
+}
+
+.formulario__radio > label{
+  font-size: 1.4rem;
+  font-weight: 400;
+  
+}
+.formulario__radio input {
+  margin-left: 10px;
+  border-radius: none;
+  
+  
+}
