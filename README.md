@@ -21,14 +21,14 @@ Desarrollamos un Aplicativo Web para una tienda de mascotas, a partir de Javascr
     </tr>
     <tr>
       <td><img src="./src/assets/finalProduct/producto-final-inicio.png" width=500 > </td>
-      <td><img src="./src/assets/finalProduct/productoCanasta.png" width=500 > </td>
+      <td><img src="./src/assets/finalProduct/producto-final-canasta.png" width=500 > </td>
     </tr>
     <tr>
       <td>Página de pago </td>
       <td>Página de pago con mensaje de alert </td>
     </tr>
     <tr>
-      <td><img src="./src/assets/finalProduct/producto-final-pago.png" width=500></td>
+      <td><img src="./src/assets/finalProduct/producto-final-pagos.png" width=500></td>
       <td><img src="./src/assets/finalProduct/producto-final-validacion.png" width=500></td>
     </tr>
   </table>
