@@ -1,12 +1,15 @@
-import validator from './validator.js';
-import {header} from './componentes/header.js';
-import {footer} from './componentes/footer.js';
-import {buscador} from './componentes/search.js';
-import {categoriesSection} from './componentes/categoriesSection.js'
+import {header} from './componentes/mainPage/header.js';
+import {footer} from './componentes/mainPage/footer.js';
+import {main} from './componentes/mainPage/main.js';
+import {shoopingCart} from './componentes/mainPage/shoopingCart/shoopingCart.js';
+import {search } from './componentes/mainPage/search.js';
 
-let body = document.querySelector("body")
-body.appendChild(header())
-body.appendChild(buscador())
-body.appendChild(categoriesSection())
-body.appendChild(footer())
+
+document.body.appendChild(header())
+document.body.appendChild(search())
+document.body.appendChild(main())
+document.body.appendChild(shoopingCart())
+document.body.appendChild(footer())
+
+
 

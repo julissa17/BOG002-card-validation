@@ -1,7 +1,17 @@
-const header = ()=>{
-    const view = `
-    <div class="header__left">
-          <div class="header__icon-menu icon"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css"> 
+   
+    <title>Página validación</title>
+</head>
+<body>
+    <header class="header">
+
+        <div class="header__left">
           <h2 class="header__logo">Logo</h2>
         </div>
 
@@ -53,17 +63,124 @@ const header = ()=>{
               </svg>
           </div>
 
-          <div class="header__icon-canasta icon"></div>
-          </div>
-    `
+        </div> 
+    </header> 
+    
+    <!-- UN UNICO FORMULARIO PARA TODOS, AUNQUE CADA UNO SEA UNA SECTION INDEPENDIENTE -->
+    
+    <form class="c-formulario">
+        <section id="formulario_contacto" class="formulario" >
+            <h2 class="formulario__title">Información de contacto</h2>
+            
+                <div class="formulario__input">
+                    <label for="name">Nombre(s) y apellido(s):</label>
+                    <input type="text" id="name" name="name" pattern="[a-zA-Zñ ]{2,30}" title="Ej: nombre entre 5 y 15 caracteres 'Isabela Jimenez'" required>
+                </div>
 
-    const cHeader = document.createElement("header")
-    cHeader.classList.add("header")
-    cHeader.innerHTML = view
+                <div class="formulario__input">
+                    <label for="identification">N° de identificación:</label>
+                    <input type="text" id="identification" name="identification" pattern="[0-9]{6,11}" maxlength="11" title=" Ej: solo digitos [0-9] '1121933347'" required>
+                </div>
+    
+                <div class="formulario__input">
+                    <label for="mail">Correo electrónico</label>
+                    <input type="email" id="mail" name="mail" required>
+                </div>   
+                              
+        </section>
 
-    return cHeader
-}
+        <section id="formulario_envio" class="formulario" >
+        
+            <h2 class="formulario__title">Información de envíos</h2>       
+            
+            <div class="formulario__metodoEnvio">
+    
+                <h2>Forma de entrega</h2>
+    
+                <div class="metodoEntrega">
+    
+                    <div class="formulario__checkbox">
+                        <label> 
+                            <input type="checkbox"  name="checkbox" class="option"> Entrega a domicilio
+                        </label>
+                    </div>
+    
+                    <div class="formulario__checkbox">
+                        <label>
+                            <input type="checkbox"  name="checkbox" class="option"> Recoger en tienda
+                        </label>
+                    </div>              
+                </div>
+            </div>
+           
+            <div class="formulario__input">
+                <label for="state">Departamento</label>
+                <input type="text" id="state" pattern="[\w#\-, ]{3,10}" title="Ej: Cundinamarca sin caracteres como(@/\$%&?¿¡|!)" required >
+            </div>   
 
-export {header}
+            <div class="formulario__input">
+                <label for="city">Ciudad/municipio:</label>
+                <input type="text" id="city" pattern="[\w#\-, ]{3,18}" title="Ej: Villavicencio sin caracteres como(@/\$%&?¿¡|!)" required>
+            </div>
+            <div class="formulario__input">
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" pattern="[\w#\-, ]{3,30}" title="Ej: Calle 8 # 32-90 Bis 6 sin caracteres como(@/\$%&?¿¡|!)" required>
+            </div>
 
+        </section>
+
+        <section id="formulario_card" class="formulario" >
+        
+            <h2 class="formulario__title">Información de pago</h2> 
+            
+    
+            <div class="metodoPago">
+            <h2>Método de pago</h2>
+                <div class="formulario__radio">
+                    <label> 
+                        <input type="radio" name="radio" checked="checked"> Tarjeta débito
+                    </label>
+                </div>
+
+                <div class="formulario__radio">
+                    <label>
+                        <input type="radio" name="radio"> Tarjeta crédito
+                    </label>
+                </div>
+                <div class="formulario__radio">
+                    <label>
+                        <input type="radio" name="radio"> Otra
+                    </label>
+                </div>              
+            </div>      
+                
+            <div class="formulario__input">
+                <label for="cardNumber">Número de tarjeta:</label>
+                <input type="text" id="cardNumber" minlength="10" maxlength="16" pattern="[0-9#]+" title=" Ej: solo digitos [0-9] range(10 - 16) " autocomplete="off" required>
+            </div>
+
+            <div class="formulario__input">
+                <label for="cardDateExpire">Fecha de vencimiento:</label>
+                <input type="month" id="cardDateExpire" required >
+            </div>
+            
+
+            <div class="formulario__input">
+                <label for="cardVerificationNumber">Código de verificacion: </label>
+                <input type="text" id="cardVerificationNumber" placeholder="CVV" maxlength="3" minlength="3" pattern="[0-9]+" min="2025-01" title="Ej:123 " required>
+            </div>   
+         
+        </section>
+            
+        <div class="formulario__buttons">
+            <button type="submit" class="c-button c-button--blue c-button--pay">Pagar</button>
+            <button class="c-button c-button--back">Menu</button>   
+        </div>
+    
+    </form>
+
+    
+    <script src="payPage.js" type="module"></script>
+</body>
+</html>
 
