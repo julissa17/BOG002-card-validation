@@ -103,7 +103,18 @@ form.addEventListener('submit',(evt)=>{
 buttonBackMain.addEventListener('click', ()=>{
     window.location ="./index.html"
 })
-
+//Método para seleccionar solo un checkbox
+let Checked = null;
+//The class name can vary
+for (let CheckBox of document.getElementsByClassName('option')){
+	CheckBox.onclick = function(){
+  	if(Checked!=null){
+      Checked.checked = false;
+      Checked = CheckBox;
+    }
+    Checked = CheckBox;
+  }
+}
 
 
 
