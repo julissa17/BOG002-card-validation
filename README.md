@@ -31,8 +31,8 @@ Se esbozo una idea principal de lo que sería el aplicativo.
       <td>Página principal con carrito desplazado </td>
     </tr>
     <tr>
-      <td><img src="./src/assets/mainPage.png" width=500></td>
-      <td><img src="./src/assets/mainPageCart.png" width=500></td>
+      <td><img src="./src/assets/finalProduct/mainPage.png" width=500 > </td>
+      <td><img src="./src/assets/finalProduct/mainPageCart.png" width=500 > </td>
     </tr>
     <tr>
       <td> </td>
