@@ -66,20 +66,29 @@ Se esbozo una idea principal de lo que sería el aplicativo.
 Finalmente se desarrolo el último prototipado, por medio de la herramienta Figma, permitiendonos tener una idea más clara para el desarrollo de nuestra página en cuanto a colores y tamaños.
 
 <table>
+  <tr>
+      <td>Componentes y colores </td>
+      <td> Diseño alert </td>
+    </tr>
+    <tr>
+      <td><img src="./src/assets/finalProduct/figma-componentes.png" width=500></td>
+      <td><img src="./src/assets/finalProduct/figma-alert.png" width=500></td>
+    </tr>
     <tr>
       <td>Página principal</td>
-      <td>Página principal con carrito desplazado </td>
+      <td>Página de pagos </td>
     </tr>
     <tr>
-      <td><img src="./src/assets/finalProduct/mainPage.png" width=500 > </td>
-      <td><img src="./src/assets/finalProduct/mainPageCart.png" width=500 > </td>
+      <td><img src="./src/assets/finalProduct/figma-mainPage.png" width=500 > </td>
+      <td><img src="./src/assets/finalProduct/figma-payPage.png" width=500 > </td>
     </tr>
     <tr>
-      <td>Página de pago </td>
-      <td>Página de pago con mensaje de alert </td>
+      <td>Diseño canasta  </td>
+      <td> Diseño alert dentro de la página</td>
     </tr>
     <tr>
-      <td><img src="./src/assets/finalProduct/payPage.png" width=500></td>
-      <td><img src="./src/assets/finalProduct/payPageAlert.png" width=500></td>
+      <td><img src="./src/assets/finalProduct/figma-canasta.png" width=500></td>
+      <td><img src="./src/assets/finalProduct/figma-payPageAlert.png" width=500></td>
     </tr>
+    
   </table>
