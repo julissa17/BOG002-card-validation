@@ -60,7 +60,7 @@ const header = ()=>{
     const cHeader = document.createElement("header")
     cHeader.classList.add("header")
     cHeader.innerHTML = view
-    
+
     return cHeader
 }
 
