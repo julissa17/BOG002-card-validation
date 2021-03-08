@@ -27,12 +27,12 @@ Se esbozo una idea principal de lo que sería el aplicativo.
 
 <table>
     <tr>
-      <td></td>
-      <td> </td>
+      <td>Página principal</td>
+      <td>Página principal con carrito desplazado </td>
     </tr>
     <tr>
-      <td><img src="./src/assets/" width=500></td>
-      <td><img src="./assets/" width=500></td>
+      <td><img src="./src/assets/mainPage.png" width=500></td>
+      <td><img src="./src/assets/mainPageCart.png" width=500></td>
     </tr>
     <tr>
       <td> </td>
@@ -55,7 +55,7 @@ Finalmente se desarrolo el último prototipado, por medio de la herramienta Figm
       <td> </td>
     </tr>
     <tr>
-      <td><img src="./assets/" width=500></td>
+      <td><img src="./assets/finalProduct/" width=500></td>
       <td><img src="./assets/" width=500></td>
     </tr>
     <tr>
