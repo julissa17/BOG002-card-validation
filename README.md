@@ -10,7 +10,7 @@ Tienda virtual especializada en productos de mascotas.
 
 
 ## 1. Resumen del proyecto
-Desarrollamos un Aplicativo Web para una tienda de mascotas, a partir de Javascript Vanilla, Html y Css, donde al finalizar la compra el cliente puede validar el número de su tarjeta de crédito y cuenta con la funcionalidad de ocultar todos los dígitos de su tarjeta exceptuando los últimos cuatro dígitos.
+Desarrollamos un Aplicativo Web responsive para una tienda de mascotas, a partir de Javascript Vanilla, Html y Css, donde al finalizar la compra el cliente puede validar el número de su tarjeta de crédito y cuenta con la funcionalidad de ocultar todos los dígitos de su tarjeta exceptuando los últimos cuatro dígitos.
 
 ## 2. Producto final
 
@@ -60,10 +60,10 @@ Se esbozo una idea principal de lo que sería el aplicativo.
   </table>
 
 
-##Feedback
+### Feedback
 
-##Prototipo Final
-Finalmente se desarrolo el último prototipado, por medio de la herramienta Figma, permitiendonos tener una idea más clara para el desarrollo de nuestra página en cuanto a colores y tamaños
+### Prototipo Final
+Finalmente se desarrolo el último prototipado, por medio de la herramienta Figma, permitiendonos tener una idea más clara para el desarrollo de nuestra página en cuanto a colores y tamaños.
 
 <table>
     <tr>
