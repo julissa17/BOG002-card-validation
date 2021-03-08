@@ -22,7 +22,7 @@ Desarrollamos un Aplicativo Web para una tienda de mascotas, a partir de Javascr
 ## 3. Investigación UX
 En el desarrollo de nuestra página consideramos  aquellas personas que necesitan comprar algún producto para sus mascotas pero por algún motivo no podían desplazarse hasta ella, para ello les ofrecemos la opción de reclamar su pedido en tienda, cuando tengan tiempo disponible o envío a domicilio.
 
-##Prototipo Inicial
+## Prototipo Inicial
 Se esbozo una idea principal de lo que sería el aplicativo.
 
 <table>
