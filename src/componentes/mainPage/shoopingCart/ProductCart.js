@@ -1,4 +1,5 @@
 import { addQuantity, minusQuantity } from "../product.js";
+import {renderTotalValue} from '../shoopingCart/shoopingCart.js'
 
 //product => cartProduct
 const cartProduct = (product) => {
@@ -12,7 +13,7 @@ const cartProduct = (product) => {
                     <div class="l-shoopingCartProduct__info">
                         <div class="l-shoppingCartProduct__infoText">
                         <p class="shoopingCartProduct__name"> ${product.name}</p>
-                        <p class="shoopingCartProduct__price">Precio unitario: ${product.price}</p>
+                        <p class="shoopingCartProduct__price">Precio unitario: $${product.price}</p>
                         </div>
 
                         <div class="l-shoppingCartProduct__infoValue">
