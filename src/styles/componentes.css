@@ -1,8 +1,9 @@
 .c-button{
-
+    width: 140px;
     background-color: var(--green-main);
     border-radius: 4px;
-    padding: 7px 30px;
+    padding: 7px 0;
+    
 
     font-style: normal;
     font-weight: bold;
@@ -31,10 +32,14 @@
 
 .plus{
     background-image: url('../assets/button-plus.svg');
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 .minus{
     background-image: url('../assets/button-minus.svg');
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 
@@ -110,7 +115,7 @@
             margin-bottom: 5px;
         }
     
-    .c-Product__buttonPay--hiden{
+    .c-Product__buttonPay--hidden{
         display: none;
     }
 
@@ -128,11 +133,14 @@
             text-align: center;
         }
 
+    .c-Product__buttonUnits--hidden{
+        display: none;
+    }
+    
 .c-carrousel{
     display: flex;
     flex-direction: column;
     padding: 15px;
-    border: 1px solid #E5E5E5;
 }
     .c-carrousel__title{
         font-weight: 500;
@@ -173,7 +181,7 @@
 
 
 /* COMPONENTE FORMULARIO */
-form{
+.c-formulario{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -187,13 +195,16 @@ form{
     width: 100%;
     padding: 10px;
     margin: 0 auto;
+    max-width:500px
+    
 }
 
 
     .formulario__title{
         font-weight: 600;
         font-size: 1.8rem;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        
     }
 
     .formulario__datos{
@@ -201,10 +212,11 @@ form{
         width: 100%;
     }
 
-        .formulario__input{
-            display: flex;
-            flex-direction: column;
-        }
+    .formulario__input{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
 
             .formulario__input > label{
                 font-size: 1.4rem;
@@ -221,10 +233,19 @@ form{
                 font-size: 1.4rem;
             }
 
-            .c-button--pay{
-                border: none;
+.formulario__buttons{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
 
-            }
+.formulario__buttons > button{
+    padding: 10px 0;
+    outline: 0;
+    border: none;
+}
 
 
 .c-scroll::-webkit-scrollbar{
@@ -286,10 +307,3 @@ h2{
 
 
 
-
-.medio_pago{
-    background-color: beige;
-    padding: 5px;
-    border-radius: 4px;
-}
-  

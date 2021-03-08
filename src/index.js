@@ -1,25 +1,15 @@
-import validator from './validator.js';
 import {header} from './componentes/mainPage/header.js';
 import {footer} from './componentes/mainPage/footer.js';
-import {productCategories} from './componentes/mainPage/productCategories.js'
-import {listProducts} from './componentes/mainPage/listProducts.js'
-import {featuredProducts} from './componentes/mainPage/featuredProducts.js'
-import {shoopingCart} from './componentes/mainPage/shoopingCart/shoopingCart.js'
-import { search } from './componentes/mainPage/search.js';
+import {main} from './componentes/mainPage/main.js';
+import {shoopingCart} from './componentes/mainPage/shoopingCart/shoopingCart.js';
+import {search } from './componentes/mainPage/search.js';
 
 
-
-let body = document.querySelector("body")
-body.appendChild(header())
-body.appendChild(search())
-body.appendChild(productCategories())
-body.appendChild(listProducts())
-body.appendChild(featuredProducts())
-body.appendChild(shoopingCart())
-body.appendChild(footer())
-
-let  numberCard = '1234567363628'
-
+document.body.appendChild(header())
+document.body.appendChild(search())
+document.body.appendChild(main())
+document.body.appendChild(shoopingCart())
+document.body.appendChild(footer())
 
 
 
