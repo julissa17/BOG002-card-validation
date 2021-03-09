@@ -10,7 +10,7 @@ Tienda virtual especializada en productos de mascotas.
 
 
 ## 1. Resumen del proyecto
-Desarrollamos un Aplicativo Web responsive para una tienda de mascotas, a partir de Javascript Vanilla, Html y Css, donde al finalizar la compra el cliente puede validar el número de su tarjeta de crédito y cuenta con la funcionalidad de ocultar todos los dígitos de su tarjeta exceptuando los últimos cuatro dígitos.
+Se desarrollo un Aplicativo Web responsive para una tienda de mascotas, cuya función principal comprende que al finalizar la compra el cliente puede validar el número de su tarjeta de crédito y cuenta con la funcionalidad de ocultar todos los dígitos de su tarjeta exceptuando los últimos cuatro. Todo esto elaborado a partir de Javascript Vanilla, Html y Css.
 
 ## 2. Producto final
 
@@ -95,7 +95,8 @@ Finalmente se desarrolo el último prototipado, por medio de la herramienta Figm
   </table>
 
   ## 4.Demo
-  Demo del proyecto (https://julissa17.github.io/BOG002-card-validation/)
+  [Demo del proyecto] (https://julissa17.github.io/BOG002-card-validation/)
+  
   ## 5. Autores
   DUPLA T12:
 
