@@ -37,6 +37,8 @@ Desarrollamos un Aplicativo Web responsive para una tienda de mascotas, a partir
 ## 3. Investigación UX
 En el desarrollo de nuestra página consideramos  aquellas personas que necesitan comprar algún producto para sus mascotas pero por algún motivo no podían desplazarse hasta ella, para ello les ofrecemos la opción de reclamar su pedido en tienda, cuando tengan tiempo disponible o envío a domicilio.
 
+La página fue pensada para usuarios con mascotas con el objetivo de cubrir sus necesidades de obtener productos para sus hijos peludos de manera rápida, eficaz y online. Por tal motivo se habilitaron las opciones de pago en linea y recibir pedidos en casa o recogerlos en la tienda. Nuestra página presta servicios de manera competente ofreciendo todo un catálogo de productos para el cuidado de animales domesticos. 
+
 ### Prototipo Inicial
 Se esbozo una idea principal de lo que sería el aplicativo.
 
