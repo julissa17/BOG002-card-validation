@@ -4,9 +4,9 @@ Tienda virtual especializada en productos de mascotas.
 ## Índice
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
 * [2. Producto final](#2-producto-final)
-* [3. Investigación UX]
-* [5. Demo]
-* [6. Autores]
+* [3. Investigación UX] (#3-investigacion-ux)
+* [4. Demo] (#4-demo)
+* [5. Autores] (#5-autores)
 
 
 ## 1. Resumen del proyecto
@@ -92,5 +92,8 @@ Finalmente se desarrolo el último prototipado, por medio de la herramienta Figm
       <td><img src="./src/assets/finalProduct/figma-canasta.png" width=500></td>
       <td><img src="./src/assets/finalProduct/figma-payPageAlert.png" width=500></td>
     </tr>
-    
   </table>
+
+  ## 4.Demo
+  
+  ## 5. Autores
