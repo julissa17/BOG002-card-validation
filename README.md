@@ -4,9 +4,9 @@ Tienda virtual especializada en productos de mascotas.
 ## Índice
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
 * [2. Producto final](#2-producto-final)
-* [3. Investigación UX] (#3-investigacion-ux)
-* [4. Demo] (#4-demo)
-* [5. Autores] (#5-autores)
+* [3. Investigación UX](#3-investigacion-ux)
+* [4. Demo](#4-demo)
+* [5. Autores](#5-autores)
 
 
 ## 1. Resumen del proyecto
