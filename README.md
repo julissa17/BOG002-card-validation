@@ -95,5 +95,10 @@ Finalmente se desarrolo el último prototipado, por medio de la herramienta Figm
   </table>
 
   ## 4.Demo
-  
+  Demo del proyecto (https://julissa17.github.io/BOG002-card-validation/)
   ## 5. Autores
+  DUPLA T12:
+
+* **Isabela Jiménez** 
+* **Julissa Vigoya** 
+---
